@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 body {
   background-image: url("https://res.cloudinary.com/cre8tcodes/image/upload/v1569275378/coins-4421639_1_2_lcp4o0.jpg");
   background-position: center center;
@@ -14,7 +18,7 @@ body {
 }
 .topsec {
 position: absolute;
-width: 1467px;
+width: 1473px;
 height: 142px;
 left: -107px;
 top: 0px;
@@ -57,11 +61,11 @@ left: 838px;
 top: 400px;
 font-family: Paytone One;
 font-style: normal;
-font-weight: bolder;
+font-weight: 400;
 font-size: 30px;
 line-height: 42px;
 color: #FFF;
-text-shadow: 1px 3px #000; 
+/* text-shadow: 1px 3px #000;  */
 }
 .btnlog {
 position: absolute;
@@ -74,7 +78,7 @@ border: 1px solid #09598E;
 box-sizing: border-box;
 border-radius: 90px;
 font-family: Paytone One;
-font-style: oblique;
+/* font-style: oblique; */
 font-weight: bolder;
 font-size: 30px;
 line-height: 42px;
@@ -91,8 +95,8 @@ background: #FFFFFF;
 border: 1px solid #09598E;
 box-sizing: border-box;
 border-radius: 90px;
-font-family: Paytone One;
-font-style: oblique;
+font-family: 'Paytone One', sans-serif;
+/* font-style: oblique; */
 font-weight: bolder;
 font-size: 30px;
 line-height: 42px;
