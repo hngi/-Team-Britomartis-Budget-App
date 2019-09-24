@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Paytone+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./css/register.css">
+  <title>Document</title>
+</head>
+<body>
+    <nav id="main_logo">
+        <h1 class="heading_logo">
+            G<img src="./img/euro-symbol-icon.svg" alt="euro-symbol-icon">Budget
+          </h1>
+    </nav>
+    <div class="container">
+        <div class="form_wrap">
+           <form action="#" id="form">
+               <div class="flex_1">
+                  <input class="form_group" type="text" name="first_name" id="first_name" placeholder="Firstname" required>
+                  <input class="form_group" type="email" name="email" id="email" placeholder="Email" required>
+                  <input class="form_group" type="password" name="password" id="password" placeholder="Password" required>
+                  <button type="submit" class="btn">Sign Up</button>
+                  <p class="info">Already have an account? <a class="text_description" href="#">Login Here</a></p> 
+               </div>
+               <div class="flex_2">
+                  <input class="form_group" type="text" name="last_name" id="last_name" placeholder="Lastname" required>
+                  <select id="amount">
+                    <option value="currency" selected>Currency</option>
+                    <option value="naira">&#8358; Nigerian Naira</option>
+                    <option value="pounds">&#163; British Pounds Sterling</option>
+                    <option value="dollar">&#36; U.S. dollar</option>
+                  </select>
+               </div>
+           </form>
+        </div>
+        <p class="center">By registering you confirm that you accept the <a class="text_description" href="#">Terms & Conditions</a> and <a class="text_description" href="#">Privacy Policy</a></p>
+    </div>
+      
+</body>
+</html>
