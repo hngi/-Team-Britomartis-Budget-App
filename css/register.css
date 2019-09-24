@@ -78,8 +78,7 @@ img {
   border:none;
   font-size: 1rem;
 }
-
-  
+ 
  .form_wrap .btn:hover {
    background-color:#075e99;
  }
@@ -96,11 +95,11 @@ img {
 }
 
  .flex_1,
- .flex_2{
+ .flex_2 {
    padding: 1rem;
  }
 
- .flex_2{
+ .flex_2 {
   width: 331.55px;
   height:317px;
  }
