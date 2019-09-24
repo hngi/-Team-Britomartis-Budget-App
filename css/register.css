@@ -1,0 +1,117 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body {
+ font-family: 'Paytone One', sans-serif;
+ font-style:normal;
+ font-weight:normal;
+}
+
+a{
+  text-decoration:none;
+}
+
+.container {
+  max-width: 1140px;
+  padding: 20px;
+  margin: 20px auto;
+  overflow:auto;
+}
+
+img {
+  display:inline-block;
+  width:30px;
+  height:30px;
+  padding: 0 0.25rem;
+}
+
+#main_logo .heading_logo {
+  font-size: 3rem;
+  color: #fff;
+  background:#09598E;
+  padding: 0.3rem 5rem;
+}
+
+#amount {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  border-radius:10px;
+  border:0.5px solid #4b4848;
+}
+
+#amount:focus,
+.form_wrap .btn:focus {
+  outline:none;
+} 
+
+.form_wrap {
+  padding:10px 20px;
+}
+
+.form_wrap .form_group {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  border-radius:10px;
+  border:0.5px solid #4b4848;
+}
+
+.form_wrap .form_group:focus {
+  outline:none;
+}
+
+ .form_wrap .btn {
+  display:block;
+  width:100px;
+  margin: 20px auto; 
+  padding:12px;
+  background-color:#09598e;
+  color:#fff;
+  cursor:pointer;
+  border-radius:10px;
+  border:none;
+  font-size: 1rem;
+}
+
+  
+ .form_wrap .btn:hover {
+   background-color:#075e99;
+ }
+
+ #form {
+   display:flex;
+   flex-direction:row;
+   justify-content: space-evenly;
+   align-items:baseline;
+ }
+
+.center {
+  text-align:center;
+}
+
+ .flex_1,
+ .flex_2{
+   padding: 1rem;
+ }
+
+ .flex_2{
+  width: 331.55px;
+  height:317px;
+ }
+
+ .info {
+   text-align:center;
+ }
+ .text_description {
+   color:#09598e;
+ }
+
+ .text_description:hover {
+   color:#075e99;
+ }
