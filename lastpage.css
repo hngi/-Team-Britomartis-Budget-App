@@ -1,0 +1,321 @@
+
+body {
+  	background-position: center center;
+  	position: relative;
+	width: 1440px;
+	height: 1024px;
+	background: #FFFFFF;
+}
+
+.top-section{
+	position: absolute;
+	width: 283px;
+	height: 117px;
+	left: 114px;
+	top: 15px;
+}
+
+
+.border-one{
+	position: absolute;
+	width: 100%;
+	height: 0px;
+	left: 40px;
+	top: 176px;
+
+	border: 1px solid #0AE347;
+}
+
+.input .text-input{
+	position: absolute;
+	width: 288px;
+	height: 50px;
+	left: 118px;
+	top: 202px;
+
+	font-family: Paytone One;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	line-height: 50px;
+
+	color: #000000;
+}
+
+.input .input-space input{
+	position: absolute;
+	width: 200px;
+	height: 60px;
+	left: 1101px;
+	top: 204px;
+
+	background: #FFFFFF;
+	border: 1px solid #000000;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+ ::placeholder{
+	position: absolute;
+	width: 128px;
+	height: 37px;
+	left: 1139px;
+	top: 213px;
+	padding-left: 40px;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 30px;
+	line-height: 37px;
+	/* identical to box height */
+
+
+	color: #000000;
+}
+
+
+.border-two{
+	position: absolute;
+	width: 100%;
+	height: 0px;
+	left: 40px;
+	top: 288px;
+	border: 1px solid #C4C4C4;
+}
+
+.text-input1{
+	position: absolute;
+	width: 89px;
+	height: 50px;
+	left: 118px;
+	top: 311px;
+
+	font-family: Paytone One;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	line-height: 50px;
+	color: #000000;
+}
+
+.input .input-space1 input{
+	position: absolute;
+width: 200px;
+height: 60px;
+left: 1101px;
+top: 313px;
+
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.input-space1 text{
+	position: absolute;
+width: 57px;
+height: 37px;
+left: 1167px;
+top: 322px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 37px;
+/* identical to box height */
+
+
+color: #000000;
+}
+
+
+.text-input2{
+	position: absolute;
+width: 91px;
+height: 50px;
+left: 118px;
+top: 423px;
+
+font-family: Paytone One;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 50px;
+
+color: #000000;
+}
+
+.input .input-space2 input{
+	position: absolute;
+width: 200px;
+height: 60px;
+left: 1101px;
+top: 425px;
+
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.input-space2 text{position: absolute;
+width: 67px;
+height: 37px;
+left: 1167px;
+top: 434px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 37px;
+/* identical to box height */
+
+
+color: #000000;
+}
+
+.border-three{
+	position: absolute;
+width: 100%;
+height: 0px;
+left: 40px;
+top: 397px;
+
+border: 1px solid #C4C4C4;
+}
+
+
+.text-input3{
+	position: absolute;
+width: 77px;
+height: 50px;
+left: 118px;
+top: 540px;
+
+font-family: Paytone One;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 50px;
+
+color: #000000;
+}
+
+.input .input-space3 input{position: absolute;
+width: 200px;
+height: 60px;
+left: 1101px;
+top: 542px;
+
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.input-space3 text{position: absolute;
+width: 49px;
+height: 37px;
+left: 1167px;
+top: 551px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 37px;
+/* identical to box height */
+
+
+color: #000000;
+}
+.border-four2{
+position: absolute;
+width: 1355.71px;
+height: 0px;
+left: 40px;
+top: 509px;
+border: 1px solid #C4C4C4;
+}
+
+.border-four{position: absolute;
+width: 1355.71px;
+height: 0px;
+left: 40px;
+top: 626px;
+
+border: 1px solid #C4C4C4;
+}
+
+.input .text-input4{position: absolute;
+width: 117px;
+height: 50px;
+left: 118px;
+top: 654px;
+
+font-family: Paytone One;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 50px;
+
+color: #000000;
+}
+
+.input .input-space4 input{position: absolute;
+width: 200px;
+height: 60px;
+left: 1101px;
+top: 656px;
+
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.total-budget{
+position: absolute;
+width: 297px;
+height: 42px;
+left: 491px;
+top: 888px;
+
+font-family: Paytone One;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 42px;
+/* identical to box height */
+
+
+color: #000000;}
+
+.total-budget-space input{
+	position: absolute;
+width: 136px;
+height: 50px;
+left: 812px;
+top: 887px;
+
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.cancel .btn button.btn-light{
+	position: absolute;
+left: 20.83%;
+right: 20.83%;
+top: 20.83%;
+bottom: 20.83%;
+
+/* Black */
+
+background: #1D1D1D;
+}
+
