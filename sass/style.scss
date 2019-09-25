@@ -1,0 +1,37 @@
+@import "components/animation";
+@import "components/nav";
+@import "components/hero";
+@import "components/responsive";
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Make footer stick to the bottom */
+footer {
+  position: absolute;
+  bottom: 0;
+  background: $blue;
+  padding-top: 50px;
+  padding-bottom: 10px;
+
+  .footer-text {
+    color: white;
+    opacity: 0.7;
+  }
+}
+
+.select {
+  width: 120px;
+}

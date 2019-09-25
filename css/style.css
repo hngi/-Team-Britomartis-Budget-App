@@ -1,73 +1,128 @@
-*{
-  box-sizing: border-box;
-}
+@keyframes slideInUp {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); } }
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp; }
+
+@-webkit-keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown; }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-fill-mode: both; }
+
+@media (prefers-reduced-motion) {
+  .animated {
+    -webkit-animation: unset !important;
+    -webkit-transition: none !important;
+    animation: unset !important;
+    transition: none !important; } }
+.navs {
+  background: #09598e;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 60px;
+  position: relative; }
+  .navs .logo {
+    width: 218px;
+    height: 60px; }
+
+.hero {
+  position: relative;
+  height: 80vh;
+  background: url(../../img/bghero.jpg);
+  background: url(../img/bghero.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  overflow-y: hidden; }
+  .hero .overlay {
+    background: rgba(0, 0, 0, 0.6);
+    height: 80vh; }
+  .hero .container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate3d(-50%, -40%, 0);
+    -webkit-transform: translate3d(-50%, -40%, 0);
+    -moz-transform: translate3d(-50%, -40%, 0);
+    -ms-transform: translate3d(-50%, -40%, 0);
+    -o-transform: translate3d(-50%, -40%, 0); }
+    .hero .container .b-text {
+      font-size: 1.8rem;
+      font-weight: 300; }
+    .hero .container .display-4 {
+      font-size: 3.5rem; }
+
+@media screen and (min-width: 366px) and (max-width: 700px) {
+  .display-4 {
+    font-size: 2.5rem !important; }
+
+  .b-text {
+    font-size: 1.5rem !important; }
+
+  .form-title {
+    font-size: 2.2rem; } }
+@media screen and (max-width: 366px) {
+  .display-4 {
+    font-size: 2.3rem !important; }
+
+  .logo {
+    width: 150px !important; }
+
+  .b-text {
+    font-size: 1.4rem !important; }
+
+  .form-title {
+    font-size: 2rem; } }
+html {
+  min-height: 100%;
+  position: relative; }
 
 body {
-  background-image: linear-gradient(to left,rgba(0,0,0,.4), rgba(0,0,0,.4)),url("https://res.cloudinary.com/cre8tcodes/image/upload/v1569275378/coins-4421639_1_2_lcp4o0.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #464646;
-}
+  box-sizing: border-box; }
 
-.navs {
-  background: #09598E;
-  padding: 10px 0;
-  position: relative;
-}
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
 
-.limg {
-  width: 200px;}
+/* Make footer stick to the bottom */
+footer {
+  position: absolute;
+  bottom: 0;
+  background: #09598e;
+  padding-top: 50px;
+  padding-bottom: 10px; }
+  footer .footer-text {
+    color: white;
+    opacity: 0.7; }
 
-  .cpb{
-    font-family: Paytone One;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 50px;
-    color: #09598E;
-    text-shadow: 1px 2px #fff;
-    }
-    .bme {
-    font-family: Paytone One;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 30px;
-    color: #FFF;
-    }
+.select {
+  width: 120px; }
 
-    .top-header {
-      padding: 150px 0;
-      width: 99%
-    }
-
-.btnlog {
-background: #FFFFFF;
-border: 1px solid #09598E;
-box-sizing: border-box;
-border-radius: 90px;
-font-family: Paytone One;
-/* font-style: oblique; */
-font-weight: bolder;
-font-size: 30px;
-line-height: 42px;
-color: #09598E;
- }
- 
-.btnsign {
-background: #FFFFFF;
-border: 1px solid #09598E;
-box-sizing: border-box;
-border-radius: 90px;
-font-family: 'Paytone One', sans-serif;
-/* font-style: oblique; */
-font-weight: bolder;
-font-size: 30px;
-line-height: 42px;
-color: #09598E;
- }
-/* remove blue outline */
- .btnlog:focus,
- .btnsign:focus{
-   outline:none;
- }
+/*# sourceMappingURL=style.css.map */
