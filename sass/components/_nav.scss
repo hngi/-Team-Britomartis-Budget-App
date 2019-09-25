@@ -1,0 +1,14 @@
+@import 'components/variables';
+
+.navs {
+  background: $blue;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 60px;
+  position: relative;
+  
+  .logo {
+    width: 218px;
+    height: 60px;
+  }
+}
