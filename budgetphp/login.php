@@ -19,9 +19,13 @@ require 'connect.php';
 //assume that the user has submitted the login form.
 if(isset($_POST['login'])){
     
-    //Retrieve the field values from our login form.
-    $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
-    $passwordAttempt = !empty($_POST['password']) ? trim($_POST['password']) : null;
+    //Receive the field values from our login form.
+    $email = !empty($_POST['email']) ? test_input($_POST['email']) : null;
+    // Check if the value of this field is an email
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        array_push($errors, "Invalid email format");
+    }
+    $passwordAttempt = !empty($_POST['password']) ? test_input($_POST['password']) : null;
     
     //Retrieve the user account information for the given username.
     $sql = "SELECT id, username, password FROM users WHERE username = :username";
@@ -76,10 +80,10 @@ if(isset($_POST['login'])){
     <body>
         <h1>Login</h1>
         <form action="login.php" method="post">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username"><br>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email"><br>
             <label for="password">Password</label>
-            <input type="text" id="password" name="password"><br>
+            <input type="password" id="password" name="password"><br>
             <input type="submit" name="login" value="Login">
         </form>
     </body>

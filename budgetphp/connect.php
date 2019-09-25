@@ -1,7 +1,7 @@
 <?php
 //Our connection details.
 $host = 'localhost';
-$user = 'root';
+$user = 'rootuser';
 $password = 'student55';
 $database = 'gobudget';
  
@@ -14,5 +14,24 @@ $pdoOptions = array(
  
 //Connect
 $pdo = new PDO("mysql:host=$host;dbname=$database", $user, $password, $pdoOptions);
+
+
+// This part declares functions and an error array that will used latter in the code
+$errors = array();
+$signup_report = '';
+$login_report = '';
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+function display_errors($errors){
+    foreach ($errors as $error) {
+        return $error;
+    }
+}
 
 ?>
