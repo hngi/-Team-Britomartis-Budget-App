@@ -3,7 +3,7 @@
 $host = 'localhost';
 $user = 'root';
 $password = 'student55';
-$database = 'db';
+$database = 'gobudget';
  
 //An options array.
 //Set the error mode to "exceptions"
