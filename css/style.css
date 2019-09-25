@@ -125,4 +125,44 @@ footer {
 .select {
   width: 120px; }
 
+<<<<<<< HEAD
 /*# sourceMappingURL=style.css.map */
+=======
+.btnlog {
+background: #FFFFFF;
+border: 1px solid #09598E;
+box-sizing: border-box;
+border-radius: 90px;
+font-family: Paytone One;
+/* font-style: oblique; */
+font-weight: bolder;
+font-size: 30px;
+line-height: 42px;
+color: #09598E;
+ }
+ 
+.btnsign {
+background: #FFFFFF;
+border: 1px solid #09598E;
+box-sizing: border-box;
+border-radius: 90px;
+font-family: 'Paytone One', sans-serif;
+/* font-style: oblique; */
+font-weight: bolder;
+font-size: 30px;
+line-height: 42px;
+color: #09598E;
+ }
+/* remove blue outline */
+ .btnlog:focus,
+ .btnsign:focus,
+ input[type=email]:focus,
+ input[type=password]:focus,
+ input[type=text]:focus,
+ [type=submit]:focus,
+ select:focus{
+   outline:none;
+   box-shadow:none !important;
+   border:1px solid #ccc !important;
+ }
+>>>>>>> 0aeea47ba34343aa57c0a73db215650519888279
