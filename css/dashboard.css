@@ -1,0 +1,48 @@
+body {
+  background-image: url("../img/background.jpg");
+}
+
+.table thead th {
+  border-bottom: 2px solid #38dd22;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.myControl {
+  width: 100px;
+}
+.mybutton {
+  border-radius: 50%;
+  box-shadow: 0px 0px 3px 1px #000000;
+}
+
+.total-money {
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+}
+
+.mainbody {
+  position: absolute;
+  top: 25%;
+  right: 25%;
+  left: 25%;
+  background-color: #fff;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 5px #000000;
+}
+
+@media screen and (max-width: 400px) {
+  .mainbody {
+    position: absolute;
+    top: 15%;
+    right: 0;
+    left: 0;
+  }
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>show</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/dashboard.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/fontawesome.min.css" />
+  </head>
+  <body>
+    <section>
+      <h4 class="text-center mt-4 text-white"><b> Welcome CustomerName</b></h4>
+    </section>
+    <section class="mainbody">
+      <div class="container my-2">
+        <div class="row ">
+          <div class="col-6"><img src="./img/blue_logo.png" alt="" /></div>
+        </div>
+      </div>
+      <div class="container">
+        <table class="table table-hover table-responsive">
+          <thead>
+            <tr>
+              <th scope="col"><h5>Item/Category</h5></th>
+              <th scope="col"><h5>Amount</h5></th>
+              <th scope="col"><h5>Priority</h5></th>
+              <th scope="col"><h5>Status</h5></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Shoes</b></td>
+              <td>
+                <input
+                  class="form-control myControl"
+                  type="number"
+                  name="amount"
+                  id="amount"
+                  value="2000"
+                  readonly
+                />
+              </td>
+              <td>
+                <select name="" id="" class="form-control">
+                  <option value="">Priority</option>
+                  <option value="">Very High</option>
+                  <option value="">High</option>
+                  <option value="">Low</option>
+                  <option value="">Very Low</option>
+                </select>
+              </td>
+              <td>
+                <button class="btn btn-success">
+                  <i class="fas fa-clipboard-check"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><b>Bag</b></td>
+              <td>
+                <input
+                  class="form-control myControl"
+                  type="number"
+                  name="amount"
+                  id="amount"
+                  value="5000"
+                  readonly
+                />
+              </td>
+              <td>
+                <select name="" id="" class="form-control">
+                  <option value="">Priority</option>
+                  <option value="">Very High</option>
+                  <option value="">High</option>
+                  <option value="">Low</option>
+                  <option value="">Very Low</option>
+                </select>
+              </td>
+              <td>
+                <button class="btn btn-success">
+                  <i class="fas fa-clipboard-check"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><b>Cap</b></td>
+              <td>
+                <input
+                  class="form-control myControl"
+                  type="number"
+                  name="amount"
+                  id="amount"
+                  value="1000"
+                  readonly
+                />
+              </td>
+              <td>
+                <select name="" id="" class="form-control">
+                  <option value="">Priority</option>
+                  <option value="">Very High</option>
+                  <option value="">High</option>
+                  <option value="">Low</option>
+                  <option value="">Very Low</option>
+                </select>
+              </td>
+              <td>
+                <button class="btn btn-success">
+                  <i class="fas fa-clipboard-check"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="row text-center mt-4">
+          <div class="col-12 col-md-6">
+            <p>
+              <b>
+                Your High Priolity Budget is
+                <span class="total-money px-3 py-1">1000</span>
+              </b>
+            </p>
+            <p>
+              <b>
+                Your Low Priolity Budget is
+                <span class="total-money px-3 py-1">1000</span>
+              </b>
+            </p>
+          </div>
+          <div class="col-md-6">
+            <button
+              class="btn btn-primary p-3 px-4 mybutton"
+              data-toggle="modal"
+              data-target="#loginModal"
+            >
+              <b class="btnText">
+                +
+              </b>
+            </button>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="loginModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="loginModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-body text-center">
+                    <!-- <form> -->
+                    <fieldset>
+                      <legend>
+                        <img src="./img/blue_logo.png" alt="Budget logo" />
+                      </legend>
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="item"
+                          id="amount"
+                          placeholder="Enter Item"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="number"
+                          class="form-control"
+                          name="amount"
+                          id="amount"
+                          placeholder="Enter Amount"
+                        />
+                      </div>
+                      <button class="btn btn-primary">
+                        Enter
+                      </button>
+                    </fieldset>
+                    <!-- </form> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+  </body>
+</html>
