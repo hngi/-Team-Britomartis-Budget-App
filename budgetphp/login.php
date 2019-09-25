@@ -21,18 +21,15 @@ if(isset($_POST['login'])){
     
     //Receive the field values from our login form.
     $email = !empty($_POST['email']) ? test_input($_POST['email']) : null;
-    // Check if the value of this field is an email
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        array_push($errors, "Invalid email format");
-    }
+    
     $passwordAttempt = !empty($_POST['password']) ? test_input($_POST['password']) : null;
     
     //Retrieve the user account information for the given username.
-    $sql = "SELECT id, username, password FROM users WHERE username = :username";
+    $sql = "SELECT * FROM users WHERE email = :email";
     $stmt = $pdo->prepare($sql);
     
     //Bind value.
-    $stmt->bindValue(':username', $username);
+    $stmt->bindValue(':email', $email);
     
     //Execute.
     $stmt->execute();
@@ -43,13 +40,13 @@ if(isset($_POST['login'])){
     //If $row is FALSE.
     if($user === false){
         //Could not find a user with that username!
-        die('Incorrect username / password combination!');
+        $login_report =  'Incorrect username / password combination!';
     } else{
         //User account found. Check to see if the given password matches the
         //password hash that we stored in our users table.
         
         //Compare the passwords.
-        $validPassword = password_verify($passwordAttempt, $user['password']);
+        $validPassword = password_verify($passwordAttempt, $user['userpass']);
         
         //If $validPassword is TRUE, the login has been successful.
         if($validPassword){
@@ -59,19 +56,19 @@ if(isset($_POST['login'])){
             $_SESSION['logged_in'] = time();
             
             //Redirect to our protected page, which we called home.php
-            header('Location: index.php');
+            header('Location: dashboard.php');
             exit;
             
         } else{
             //$validPassword was FALSE. Passwords do not match.
-            die('Incorrect username / password combination!');
+            $login_report =  'Incorrect username / password combination!';
         }
     }
     
 }
  
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -79,6 +76,7 @@ if(isset($_POST['login'])){
     </head>
     <body>
         <h1>Login</h1>
+        <div class="report"><?= $login_report ?></div>
         <form action="login.php" method="post">
             <label for="email">Email</label>
             <input type="email" id="email" name="email"><br>
@@ -87,4 +85,4 @@ if(isset($_POST['login'])){
             <input type="submit" name="login" value="Login">
         </form>
     </body>
-</html>
+</html> -->
