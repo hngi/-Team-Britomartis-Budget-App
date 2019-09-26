@@ -1,0 +1,128 @@
+body
+{
+    background-color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
+.container
+{
+    background-color: white;
+    width: 700px;
+    height: 550px;
+    border-radius: px;
+    margin: 0, auto;
+    border-bottom: 3px solid #ccc;
+    border-top: 30px;
+}
+
+
+.in {
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    border: 0.5px solid #686de0;
+    margin-left: 400px;
+    padding-left: 5px;
+    Margin-top: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.am
+    {
+        width: 120px;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        border: 0.5px solid #686de0;
+        margin-left: 306px;
+        padding-left: 5px;
+        Margin-top: 0px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+}
+
+.it
+{
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    border: 0.5px solid #686de0;
+    margin-left: 400px;
+    padding-left: 5px;
+    Margin-top: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.ip
+{
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    border: 0.5px solid #686de0;
+    margin-left: 410px;
+    padding-left: 5px;
+    Margin-top: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.is
+{
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    border: 0.5px solid #686de0;
+    margin-left: 390px;
+    padding-left: 5px;
+    Margin-top: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.bu {
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    border: 0.5px solid #686de0;
+    margin-left: 20px;
+    padding-left: 5px;
+    Margin-top: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.total
+{
+    margin-left: 100px;
+    font-weight: bold;
+    font-size: 14;
+}
+
+
+.para
+{
+   margin-left: 20px;
+   font-weight: bold;
+   font-size: 20px;
+}
+
+hr
+{
+    border: 0.5px solid #6ab04c;
+}
+

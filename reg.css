@@ -1,0 +1,59 @@
+body
+{
+    background-color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
+.container
+{
+    background-color: white;
+    width: 700px;
+    height: 550px;
+    border-radius: 0.5px;
+    margin: 0, auto;
+    border-bottom: 3px solid #ccc;
+    border-top: 30px;
+}
+
+.paragraph
+{
+background-color: #4834d4;
+color: white;
+font-family: Georgia, 'Times New Roman', Times, serif;
+text-align: left;
+border-radius: 0.3px;
+padding: 15px; 0px; 15px; 0px;
+Margin-top: 30px;
+}
+
+.in {
+    width: 235px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid #ccc;
+    margin-left: 35px;
+    padding-left: 5px;
+    Margin-top: 25px;
+}
+
+.dcurr
+{
+   width: 100px;
+   margin-left: 35px;
+   height: 30px;
+   border-radius: 5px;
+}
+
+button
+{
+   margin-left: 50px;
+   margin-top: 30px;
+   padding: 6px; 0px; 6px; 0px;
+   background-color: #4834d4;
+   color: white;
+   border: none;
+   border-radius: 10px;
+}
+
