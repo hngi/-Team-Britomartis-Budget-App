@@ -3,7 +3,7 @@ body {
 }
 
 .table thead th {
-  border-bottom: 2px solid #38dd22;
+  border-bottom: 2px solid #09598e;
 }
 
 .table th,
@@ -17,14 +17,14 @@ body {
 .myControl {
   width: 100px;
 }
+
+.mytotal {
+  width: 150px;
+  margin-left: 1rem;
+}
 .mybutton {
   border-radius: 50%;
   box-shadow: 0px 0px 3px 1px #000000;
-}
-
-.total-money {
-  border: 1px solid #dee2e6;
-  border-radius: 5px;
 }
 
 .mainbody {
@@ -41,8 +41,20 @@ body {
 @media screen and (max-width: 400px) {
   .mainbody {
     position: absolute;
-    top: 15%;
+    top: 10%;
     right: 0;
     left: 0;
+  }
+
+  .down-text {
+    text-align: center;
+  }
+
+  .down-text .btn-cal {
+    margin-top: 0.75em;
+  }
+
+  .mytotal {
+    margin-left: 5rem;
   }
 }

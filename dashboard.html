@@ -17,7 +17,7 @@
     <section class="mainbody">
       <div class="container my-2">
         <div class="row ">
-          <div class="col-6"><img src="./img/blue_logo.png" alt="" /></div>
+          <div class="col-4"><img src="./img/blue_logo.png" alt="" /></div>
         </div>
       </div>
       <div class="container">
@@ -27,7 +27,7 @@
               <th scope="col"><h5>Item/Category</h5></th>
               <th scope="col"><h5>Amount</h5></th>
               <th scope="col"><h5>Priority</h5></th>
-              <th scope="col"><h5>Status</h5></th>
+              <th scope="col"><h5>Delete</h5></th>
             </tr>
           </thead>
           <tbody>
@@ -44,17 +44,18 @@
                 />
               </td>
               <td>
-                <select name="" id="" class="form-control">
-                  <option value="">Priority</option>
-                  <option value="">Very High</option>
-                  <option value="">High</option>
-                  <option value="">Low</option>
-                  <option value="">Very Low</option>
-                </select>
+                <input
+                  class="form-control myControl"
+                  type="text"
+                  name="priority"
+                  id="priority"
+                  value="High"
+                  readonly
+                />
               </td>
               <td>
-                <button class="btn btn-success">
-                  <i class="fas fa-clipboard-check"></i>
+                <button class="btn btn-danger">
+                  <i class="fas fa-trash-alt"></i>
                 </button>
               </td>
             </tr>
@@ -71,17 +72,18 @@
                 />
               </td>
               <td>
-                <select name="" id="" class="form-control">
-                  <option value="">Priority</option>
-                  <option value="">Very High</option>
-                  <option value="">High</option>
-                  <option value="">Low</option>
-                  <option value="">Very Low</option>
-                </select>
+                <input
+                  class="form-control myControl"
+                  type="text"
+                  name="priority"
+                  id="priority"
+                  value="High"
+                  readonly
+                />
               </td>
               <td>
-                <button class="btn btn-success">
-                  <i class="fas fa-clipboard-check"></i>
+                <button class="btn btn-danger">
+                  <i class="fas fa-trash-alt"></i>
                 </button>
               </td>
             </tr>
@@ -98,38 +100,41 @@
                 />
               </td>
               <td>
-                <select name="" id="" class="form-control">
-                  <option value="">Priority</option>
-                  <option value="">Very High</option>
-                  <option value="">High</option>
-                  <option value="">Low</option>
-                  <option value="">Very Low</option>
-                </select>
+                <input
+                  class="form-control myControl"
+                  type="text"
+                  name="priority"
+                  id="priority"
+                  value="High"
+                  readonly
+                />
               </td>
               <td>
-                <button class="btn btn-success">
-                  <i class="fas fa-clipboard-check"></i>
+                <button class="btn btn-danger">
+                  <i class="fas fa-trash-alt"></i>
                 </button>
               </td>
             </tr>
           </tbody>
         </table>
-        <div class="row text-center mt-4">
-          <div class="col-12 col-md-6">
+        <div class="row mt-4 down-text">
+          <div class="col-sm-12 col-md-6">
             <p>
               <b>
-                Your High Priority Budget is
-                <span class="total-money px-3 py-1">1000</span>
-              </b>
-            </p>
-            <p>
-              <b>
-                Your Low Priority Budget is
-                <span class="total-money px-3 py-1">1000</span>
+                Enter Your Budgeted Amount
+
+                <input
+                  class="form-control mytotal text-center"
+                  type="number"
+                  name="budgetedamount"
+                  id="budgetedamount"
+                  value="5000"
+                />
               </b>
             </p>
           </div>
-          <div class="col-md-6">
+
+          <div class="col-sm-12 col-md-3">
             <button
               class="btn btn-primary p-3 px-4 mybutton"
               data-toggle="modal"
@@ -168,14 +173,13 @@
                           />
                         </div>
                         <div class="form-group">
-                          <input
-                            type="number"
-                            class="form-control"
-                            name="amount"
-                            id="amount"
-                            placeholder="Enter Amount"
-                            required
-                          />
+                          <select name="" id="" class="form-control">
+                            <option value="">Priority</option>
+                            <option value="">Very High</option>
+                            <option value="">High</option>
+                            <option value="">Low</option>
+                            <option value="">Very Low</option>
+                          </select>
                         </div>
                         <button class="btn btn-primary">
                           Enter
@@ -186,6 +190,9 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="col-sm-12 col-md-3">
+            <button class="btn btn-primary btn-cal">Calculate</button>
           </div>
         </div>
       </div>
