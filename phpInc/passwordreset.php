@@ -1,12 +1,4 @@
 <?php
-
- 
-/**
- * Start the session.
- */
-session_start();
- 
-
  
 /**
  * Include our MySQL connection.

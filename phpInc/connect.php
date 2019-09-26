@@ -1,4 +1,10 @@
 <?php
+ 
+/**
+ * Start the session.
+ */
+session_start();
+ 
 //Our connection details.
 $host = 'localhost';
 $user = 'rootuser';
