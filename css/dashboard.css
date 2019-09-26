@@ -1,5 +1,5 @@
 body {
-  background-image: url("../img/bghero.jpg");
+  background-image: url("https://res.cloudinary.com/fabianuzukwu/image/upload/v1569531046/team%20britomartis/eordnce8xjl16nws3ftz.jpg");
 }
 
 .table thead th {
@@ -12,6 +12,9 @@ body {
 
   vertical-align: top;
   border-top: 1px solid #dee2e6;
+}
+.category {
+  font-weight: bolder;
 }
 
 .myControl {
@@ -56,5 +59,9 @@ body {
 
   .mytotal {
     margin-left: 5rem;
+  }
+
+  .category {
+    width: 10rem;
   }
 }
