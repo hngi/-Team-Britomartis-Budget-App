@@ -24,7 +24,15 @@
         <table class="table table-hover table-responsive">
           <thead>
             <tr>
-              <th scope="col"><h5>Item/Category</h5></th>
+              <th scope="col">
+                <select name="" id="category" class="form-control category">
+                  <option value="">Category</option>
+                  <option value="">Transportation</option>
+                  <option value="">Housing</option>
+                  <option value="">Food</option>
+                  <option value="">Personal Care</option>
+                </select>
+              </th>
               <th scope="col"><h5>Amount</h5></th>
               <th scope="col"><h5>Priority</h5></th>
               <th scope="col"><h5>Delete</h5></th>
@@ -121,7 +129,7 @@
           <div class="col-sm-12 col-md-6">
             <p>
               <b>
-                Enter Your Budgeted Amount
+                Enter Total Available Sum
 
                 <input
                   class="form-control mytotal text-center"
