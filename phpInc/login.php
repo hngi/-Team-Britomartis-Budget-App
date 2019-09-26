@@ -8,12 +8,12 @@ require 'connect.php';
  
 //If the POST var "login" exists (our submit button), then we can
 //assume that the user has submitted the login form.
-if(isset($_POST['login'])){
+if(isset($_POST['login-email'])){
     
     //Receive the field values from our login form.
-    $email = !empty($_POST['email']) ? test_input($_POST['email']) : null;
+    $email = !empty($_POST['login-email']) ? test_input($_POST['login-email']) : null;
     
-    $passwordAttempt = !empty($_POST['password']) ? test_input($_POST['password']) : null;
+    $passwordAttempt = !empty($_POST['login-password']) ? test_input($_POST['login-password']) : null;
     
     //Retrieve the user account information for the given username.
     $sql = "SELECT * FROM users WHERE email = :email";

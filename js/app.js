@@ -14,4 +14,32 @@ $(() => {
         })
     });
 
+    $('#formlogin').submit((e) => {
+        e.preventDefault();
+        let formData =  $('#formlogin').serialize();
+        
+        $.ajax({
+            type: 'POST',
+            url: './phpInc/login.php',
+            data: formData,
+            success: function(result) {
+                $('.repot').text(result);
+            }
+        })
+    });
+
+    $('#formreset').submit((e) => {
+        e.preventDefault();
+        let formData =  $('#formreset').serialize();
+        
+        $.ajax({
+            type: 'POST',
+            url: './phpInc/passwordreset.php',
+            data: formData,
+            success: function(result) {
+                $('.repot').text(result);
+            }
+        })
+    });
+
 });
