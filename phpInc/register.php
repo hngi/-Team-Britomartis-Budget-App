@@ -17,7 +17,7 @@ require 'connect.php';
  
 //If the POST var "register" exists (our submit button), then we can
 //assume that the user has submitted the registration form.
-if(isset($_POST['register'])){
+if(isset($_POST['signupbutton'])){
     
     //Retrieve the field values from our registration form.
     $firstname = !empty($_POST['firstname']) ? test_input($_POST['firstname']) : null;

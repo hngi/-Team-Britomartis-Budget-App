@@ -155,6 +155,7 @@
     <div class="modal-dialog px-2" role="document">
      <div class="modal-content">
       <div class="modal-header">
+       <div class="repot alert-info"></div>
        <button class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
        </button>
@@ -166,13 +167,13 @@
         <div class="row form__row">
          <div class="col-sm-6">
           <div class="form-group">
-           <input type="text" name="signupfirstname" id="firstname" placeholder="First name" maxlength="25"
+           <input type="text" name="firstname" id="firstname" placeholder="First name" maxlength="25"
             minlength="3" class="form-control form-control-lg" required>
           </div>
          </div>
          <div class="col-sm-6">
           <div class="form-group">
-           <input type="text" name="signupsurname" id="surname" placeholder="Surname" maxlength="25" minlength="3"
+           <input type="text" name="lastname" id="surname" placeholder="Surname" maxlength="25" minlength="3"
             class="form-control form-control-lg" required>
           </div>
          </div>
@@ -180,23 +181,28 @@
         <div class="row">
          <div class="col-12">
           <div class="form-group">
-           <input type="email" name="signupemail" id="email" placeholder="Email Address" minlength="11"
+           <input type="email" name="email" id="email" placeholder="Email Address" minlength="11"
             class="form-control form-control-lg" required>
           </div>
          </div>
          <div class="col-12">
           <div class="form-group">
-           <input type="password" name="signuppassword" id="password" placeholder="Password" minlength="6"
+           <input type="password" name="password" id="password" placeholder="Password" minlength="6"
             class="form-control form-control-lg" required>
+          </div>
+         </div>
+         <div class="col-12">
+          <div class="form-group">
+           <input type="password" name="repeat-password" id="repaet-password" placeholder="Repeat Password" minlength="6"
+           class="form-control form-control-lg" required>
           </div>
          </div>
          <div class="col-12">
           <div class="form-group">
            <select id="my-select" class="select form-control" name="currency">
             <option value="" disabled selected hidden>Currency</option>
-            <option value="naira">Naira</option>
-            <option value="dollar">Dollar</option>
-            <option value="euro">Euro</option>
+            <option value="NGN">Naira</option>
+            <option value="USD">Dollar</option>
            </select>
           </div>
          </div>
@@ -232,7 +238,7 @@
  <!--FOOTER SECTION-->
  <footer class="w-100 m-0">
   <div class="container-fluid text-center">
-   <p class="small footer-text">&copy; Copyright 2019 - GoBudget</p>
+   <p class="small footer-text">&copy; Copyright 2019 - HNGI GoBudget</p>
   </div>
  </footer>
 

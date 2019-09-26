@@ -20,6 +20,7 @@ $pdo = new PDO("mysql:host=$host;dbname=$database", $user, $password, $pdoOption
 $errors = array();
 $signup_report = '';
 $login_report = '';
+$pass_reset_report = '';
 
 function test_input($data) {
     $data = trim($data);
