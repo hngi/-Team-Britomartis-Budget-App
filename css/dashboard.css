@@ -13,6 +13,9 @@ body {
   vertical-align: top;
   border-top: 1px solid #dee2e6;
 }
+.category {
+  font-weight: bolder;
+}
 
 .myControl {
   width: 100px;
@@ -56,5 +59,9 @@ body {
 
   .mytotal {
     margin-left: 5rem;
+  }
+
+  .category {
+    width: 10rem;
   }
 }
