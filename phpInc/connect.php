@@ -4,8 +4,16 @@
  * Start the session.
  */
 session_start();
+
+//If using locally, please comment out the remote connection section
+
+//Our Local connection details.
+// $host = 'localhost';
+// $user = 'root';
+// $password = 'student55';
+// $database = 'gobudget';
  
-//Our connection details.
+//Our remote connection details.
 $host = 'us-cdbr-iron-east-02.cleardb.net';
 $user = 'b45f730745b2dc';
 $password = '236593db';
