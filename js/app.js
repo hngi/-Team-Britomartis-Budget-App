@@ -23,7 +23,12 @@ $(() => {
             url: './phpInc/login.php',
             data: formData,
             success: function(result) {
-                $('.repot').text(result);
+                if (result) {
+                    $('.repot').text(result);
+                } else { 
+                    location.replace('dashboard.html');
+                }
+    
             }
         })
     });
