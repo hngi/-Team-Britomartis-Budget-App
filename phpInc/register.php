@@ -83,10 +83,10 @@ if(isset($_POST['reg-email'])){
         $result = $stmt->execute();
         
         //If the signup process is successful.
-        if($result){
-            //set signup report to success
-            $signup_report = 'Success! Your Sign up was Successful.';
-        }
+        // if($result){
+        //     //set signup report to success
+        //     $signup_report = 'Success! Your Sign up was Successful.';
+        // }
 
     }
 

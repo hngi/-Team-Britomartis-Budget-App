@@ -9,7 +9,11 @@ $(() => {
             url: './phpInc/register.php',
             data: formData,
             success: function(result) {
-                $('.repot').text(result);
+                if (result) {
+                    $('.repot').text(result);
+                } else { 
+                    location.replace('dashboard.php');
+                }
             }
         })
     });
