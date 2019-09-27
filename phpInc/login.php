@@ -31,7 +31,7 @@ if(isset($_POST['login-email'])){
     //If $row is FALSE.
     if($user === false){
         //Could not find a user with that username!
-        $login_report =  'Incorrect username / password combination!';
+        echo $login_report =  'Incorrect username / password combination!';
     } else{
         //User account found. Check to see if the given password matches the
         //password hash that we stored in our users table.
@@ -41,39 +41,21 @@ if(isset($_POST['login-email'])){
         
         //If $validPassword is TRUE, the login has been successful.
         if($validPassword){
-            
+            // $login_report = 'Success';
             //Provide the user with a login session.
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['logged_in'] = time();
             
             //Redirect to our protected page, which we called home.php
-            header('Location: dashboard.php');
-            exit;
+            // header('Location: ../dashboard.html');
             
         } else{
             //$validPassword was FALSE. Passwords do not match.
-            $login_report =  'Incorrect username / password combination!';
+            echo $login_report =  'Incorrect username / password combination!';
         }
     }
     
+    // echo $login_report;
 }
  
 ?>
-<!-- <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Login</title>
-    </head>
-    <body>
-        <h1>Login</h1>
-        <div class="report"><?= $login_report ?></div>
-        <form action="login.php" method="post">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email"><br>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password"><br>
-            <input type="submit" name="login" value="Login">
-        </form>
-    </body>
-</html> -->

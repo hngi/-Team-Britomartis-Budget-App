@@ -55,8 +55,8 @@
 .hero {
   position: relative;
   height: 80vh;
-  background: url(../../img/bghero.jpg);
-  background: url(../img/bghero.jpg);
+  background: url(https://res.cloudinary.com/fabianuzukwu/image/upload/v1569531046/team%20britomartis/eordnce8xjl16nws3ftz.jpg);
+  background: url(https://res.cloudinary.com/fabianuzukwu/image/upload/v1569531046/team%20britomartis/eordnce8xjl16nws3ftz.jpg);
   background-position: top center;
   background-repeat: no-repeat;
   overflow-y: hidden; }
