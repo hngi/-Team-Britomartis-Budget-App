@@ -20,7 +20,7 @@ if(isset($_POST['reg-email'])){
 
     $lastname = !empty($_POST['lastname']) ? test_input($_POST['lastname']) : null;
     // Check if the value of this field is an alphabet and of 3 characters and more
-    if (!preg_match("/[a-z]{3,}/i", $firstname)) {
+    if (!preg_match("/[a-z]{3,}/i", $lastname)) {
         array_push($errors, "Sorry!! Lastname is too short");
     }
 
