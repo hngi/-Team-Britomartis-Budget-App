@@ -44,6 +44,7 @@ if(isset($_POST['login-email'])){
             // $login_report = 'Success';
             //Provide the user with a login session.
             $_SESSION['user_id'] = $user['id'];
+            $_SESSION['name'] = $user['firstname'];
             $_SESSION['logged_in'] = time();
             
             //Redirect to our protected page, which we called home.php
@@ -55,7 +56,21 @@ if(isset($_POST['login-email'])){
         }
     }
     
-    // echo $login_report;
 }
  
+function userAuth(){
+    if (!isset($_SESSION['user_id'])){
+        header("location: index.html");
+    }
+    
+}
+
+function logOut() {
+    if (isset($_POST['logout'])) {
+        session_destroy();
+        header("location: index.html");
+    }
+    // session_destroy();
+    // header("location: index.html");
+}
 ?>

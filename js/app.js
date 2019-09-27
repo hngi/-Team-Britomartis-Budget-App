@@ -26,7 +26,7 @@ $(() => {
                 if (result) {
                     $('.repot').text(result);
                 } else { 
-                    location.replace('dashboard.html');
+                    location.replace('dashboard.php');
                 }
     
             }

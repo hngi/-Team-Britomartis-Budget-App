@@ -8,10 +8,10 @@ require 'connect.php';
 
  
 //If the POST var "resetpassword" exists (our submit button), then we can
-if(isset($_POST['resetpassword'])){
+if(isset($_POST['reset-email'])){
     
     //Retrieve the field values from our registration form.
-    $email = !empty($_POST['email']) ? test_input($_POST['email']) : null;
+    $email = !empty($_POST['reset-email']) ? test_input($_POST['reset-email']) : null;
     // Check if the value of this field is an email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         array_push($errors, "Invalid email format");
@@ -39,22 +39,8 @@ if(isset($_POST['resetpassword'])){
     else {
         $pass_reset_report = 'Sorry! No such email found, please check and try again';
     }
+
+    echo $pass_reset_report;
 }
  
 ?>
-<!-- <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Register</title>
-    </head>
-    <body>
-        <h1>Register</h1>
-        <div class="report"><?= $pass_reset_report ?></div>
-        <form action="passwordreset.php" method="post">
-            <label for="email">email</label>
-            <input type="email" id="email" name="email"><br>
-            <input type="submit" name="resetpassword" value="Reset My Password"></button>
-        </form>
-    </body>
-</html> -->
