@@ -6,8 +6,7 @@ userAuth();
 logOut();
 
 $dName = $_SESSION['name'];
-// $dEmail = $_SESSION['email'];
-// $dPic = strtoupper(substr($dName, 0, 1));
+$dEmail = $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,29 +19,50 @@ $dName = $_SESSION['name'];
     <link rel="stylesheet" href="./css/dashboard.css" />
     <link rel="stylesheet" href="./css/all.min.css" />
     <link rel="stylesheet" href="./css/fontawesome.min.css" />
-    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
   </head>
   <body>
-    <section>
-      <h4 class="text-center mt-4 text-white"><b> Welcome <?= $dName; ?></b></h4>
+    <section class="mt-4 text-center container">
+      <div class="row ">
+        <div class="col-3">
+          <form action="" method="POST">
+              <button class="btn btn-danger" name="logout">Log Out</button>
+          </form>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-primary" name="myBudget">
+            Display Budget
+          </button>
+        </div>
+        <div class="col-3">
+          <button
+            class="btn btn-success"
+            name="myBudget"
+            onclick="saveBudget()"
+          >
+            Save Budget
+          </button>
+        </div>
+      </div>
+      <h4 class="text-white"><b> Welcome <?= $dName; ?></b></h4>
     </section>
     <section class="mainbody">
+      <div id="myAlert"></div>
       <div class="container my-2">
         <div class="row ">
-          <div class="col-4"><img src="https://res.cloudinary.com/fabianuzukwu/image/upload/v1569531044/team%20britomartis/vgcrl4aqmugqun37wpp7.png" alt="" /></div>
+          <div class="col-4"><img src="./img/blue_logo.png" alt="" /></div>
         </div>
       </div>
       <div class="container">
-        <table class="table table-hover table-responsive">
+        <table class="table table-hover table-responsive" id="tableid">
           <thead>
             <tr>
               <th scope="col">
                 <select name="" id="category" class="form-control category">
                   <option value="">Category</option>
-                  <option value="">Transportation</option>
-                  <option value="">Housing</option>
-                  <option value="">Food</option>
-                  <option value="">Personal Care</option>
+                  <option value="Transportation">Transportation</option>
+                  <option value="Housing">Housing</option>
+                  <option value="Food">Food</option>
+                  <option value="Personal Care">Personal Care</option>
                 </select>
               </th>
               <th scope="col"><h5>Amount</h5></th>
@@ -50,92 +70,7 @@ $dName = $_SESSION['name'];
               <th scope="col"><h5>Delete</h5></th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td><b>Shoes</b></td>
-              <td>
-                <input
-                  class="form-control myControl"
-                  type="number"
-                  name="amount"
-                  id="amount"
-                  value="2000"
-                  readonly
-                />
-              </td>
-              <td>
-                <input
-                  class="form-control myControl"
-                  type="text"
-                  name="priority"
-                  id="priority"
-                  value="High"
-                  readonly
-                />
-              </td>
-              <td>
-                <button class="btn btn-danger">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td><b>Bag</b></td>
-              <td>
-                <input
-                  class="form-control myControl"
-                  type="number"
-                  name="amount"
-                  id="amount"
-                  value="5000"
-                  readonly
-                />
-              </td>
-              <td>
-                <input
-                  class="form-control myControl"
-                  type="text"
-                  name="priority"
-                  id="priority"
-                  value="High"
-                  readonly
-                />
-              </td>
-              <td>
-                <button class="btn btn-danger">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td><b>Cap</b></td>
-              <td>
-                <input
-                  class="form-control myControl"
-                  type="number"
-                  name="amount"
-                  id="amount"
-                  value="1000"
-                  readonly
-                />
-              </td>
-              <td>
-                <input
-                  class="form-control myControl"
-                  type="text"
-                  name="priority"
-                  id="priority"
-                  value="High"
-                  readonly
-                />
-              </td>
-              <td>
-                <button class="btn btn-danger">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
+          <tbody id="insideTable"></tbody>
         </table>
         <div class="row mt-4 down-text">
           <div class="col-sm-12 col-md-6">
@@ -148,7 +83,7 @@ $dName = $_SESSION['name'];
                   type="number"
                   name="budgetedamount"
                   id="budgetedamount"
-                  value="5000"
+                  value=""
                 />
               </b>
             </p>
@@ -177,31 +112,36 @@ $dName = $_SESSION['name'];
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-body text-center">
-                    <form>
+                    <form method="POST" id="itemform">
                       <fieldset>
                         <legend>
-                          <img src="https://res.cloudinary.com/fabianuzukwu/image/upload/v1569531044/team%20britomartis/vgcrl4aqmugqun37wpp7.png" alt="Budget logo" />
+                          <img src="./img/blue_logo.png" alt="Budget logo" />
                         </legend>
                         <div class="form-group">
                           <input
                             type="text"
                             class="form-control"
                             name="item"
-                            id="amount"
+                            id="item"
                             placeholder="Enter Item"
                             required
                           />
                         </div>
                         <div class="form-group">
-                          <select name="" id="" class="form-control">
+                          <select
+                            name="priority"
+                            id="priority"
+                            class="form-control"
+                            required
+                          >
                             <option value="">Priority</option>
-                            <option value="">Very High</option>
-                            <option value="">High</option>
-                            <option value="">Low</option>
-                            <option value="">Very Low</option>
+                            <option value="Very High">Very High</option>
+                            <option value="High">High</option>
+                            <option value="Low">Low</option>
+                            <option value="Very Low">Very Low</option>
                           </select>
                         </div>
-                        <button class="btn btn-primary">
+                        <button class="btn btn-primary" id="enterBtn">
                           Enter
                         </button>
                       </fieldset>
@@ -212,7 +152,9 @@ $dName = $_SESSION['name'];
             </div>
           </div>
           <div class="col-sm-12 col-md-3">
-            <button class="btn btn-primary btn-cal">Calculate</button>
+            <button class="btn btn-primary btn-cal" onclick="calculate()">
+              Calculate
+            </button>
           </div>
         </div>
       </div>
@@ -234,5 +176,7 @@ $dName = $_SESSION['name'];
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/dashboard.js"></script>
   </body>
 </html>
