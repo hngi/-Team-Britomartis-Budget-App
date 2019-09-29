@@ -7,6 +7,13 @@ logOut();
 
 $dName = $_SESSION['name'];
 $dEmail = $_SESSION['email'];
+$dCurrency = $_SESSION['currency'];
+$currency = '';
+if ($dCurrency == 'NGN') {
+  $currency = '&#8358;';
+} else {
+  $currency = '&#36;';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,15 +63,8 @@ $dEmail = $_SESSION['email'];
         <table class="table table-hover table-responsive" id="tableid">
           <thead>
             <tr>
-              <th scope="col">
-                <select name="" id="category" class="form-control category">
-                  <option value="">Category</option>
-                  <option value="Transportation">Transportation</option>
-                  <option value="Housing">Housing</option>
-                  <option value="Food">Food</option>
-                  <option value="Personal Care">Personal Care</option>
-                </select>
-              </th>
+              <th scope="col"><h5>Item</h5></th>  
+              <th scope="col"><h5>Category</h5></th>
               <th scope="col"><h5>Amount</h5></th>
               <th scope="col"><h5>Priority</h5></th>
               <th scope="col"><h5>Delete</h5></th>
@@ -77,12 +77,13 @@ $dEmail = $_SESSION['email'];
             <p>
               <b>
                 Enter Total Available Sum
-
+                
                 <input
                   class="form-control mytotal text-center"
                   type="number"
                   name="budgetedamount"
                   id="budgetedamount"
+                  placeholder="<?= $currency ?>"
                   value=""
                 />
               </b>
@@ -128,6 +129,19 @@ $dEmail = $_SESSION['email'];
                           />
                         </div>
                         <div class="form-group">
+                          <select name="category"
+                           id="category" 
+                           class="form-control"
+                           required
+                          >
+                            <option value="">Category</option>
+                            <option value="Transportation">Transportation</option>
+                            <option value="Housing">Housing</option>
+                            <option value="Food">Food</option>
+                            <option value="Personal Care">Personal Care</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
                           <select
                             name="priority"
                             id="priority"
@@ -135,10 +149,9 @@ $dEmail = $_SESSION['email'];
                             required
                           >
                             <option value="">Priority</option>
-                            <option value="Very High">Very High</option>
                             <option value="High">High</option>
+                            <option value="Medium">Medium</option>
                             <option value="Low">Low</option>
-                            <option value="Very Low">Very Low</option>
                           </select>
                         </div>
                         <button class="btn btn-primary" id="enterBtn">
