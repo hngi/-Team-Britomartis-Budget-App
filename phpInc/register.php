@@ -85,7 +85,36 @@ if(isset($_POST['reg-email'])){
         //If the signup process is successful.
         if($result){
             //set signup report to success
-            $signup_report = 'Success! Your Sign up was Successful.';
+            // $signup_report = 'Success! Your Sign up was Successful.';
+             //Retrieve the user account information for the given username.
+            $sql = "SELECT * FROM users WHERE email = :email";
+            $stmt = $pdo->prepare($sql);
+            
+            //Bind value.
+            $stmt->bindValue(':email', $email);
+            
+            //Execute.
+            $stmt->execute();
+            
+            //Fetch row.
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $validPassword = password_verify($password1, $user['userpass']);
+        
+            //If $validPassword is TRUE, the login has been successful.
+            if($validPassword){
+                // $login_report = 'Success';
+                //Provide the user with a login session.
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['name'] = $user['firstname'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['currency'] = $user['currency'];
+                $_SESSION['logged_in'] = time();
+                
+                //Redirect to our protected page, which we called home.php
+                // header('Location: ../dashboard.html');
+                
+            }
         }
 
     }
