@@ -35,7 +35,7 @@ if ($dCurrency == 'NGN') {
             <button class="btn btn-danger" name="logout">Log Out</button>
         </form>
       </div>
-      <div class="col-6">
+      <!-- <div class="col-6">
         <button class="btn btn-primary" name="myBudget">
           Display Budget
         </button>
@@ -48,7 +48,7 @@ if ($dCurrency == 'NGN') {
         >
           Save Budget
         </button>
-      </div>
+      </div> -->
     </div>
     </section>
     <section class="mt-4 text-center container">
