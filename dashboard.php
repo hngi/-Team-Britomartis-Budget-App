@@ -28,28 +28,31 @@ if ($dCurrency == 'NGN') {
     <link rel="stylesheet" href="./css/fontawesome.min.css" />
   </head>
   <body>
-    <section class="mt-4 text-center container">
-      <div class="row ">
-        <div class="col-3">
-          <form action="" method="POST">
-              <button class="btn btn-danger" name="logout">Log Out</button>
-          </form>
-        </div>
-        <div class="col-6">
-          <button class="btn btn-primary" name="myBudget">
-            Display Budget
-          </button>
-        </div>
-        <div class="col-3">
-          <button
-            class="btn btn-success"
-            name="myBudget"
-            onclick="saveBudget()"
-          >
-            Save Budget
-          </button>
-        </div>
+    <section class="">
+    <div class="row ">
+      <div class="col-3">
+        <form action="" method="POST">
+            <button class="btn btn-danger" name="logout">Log Out</button>
+        </form>
       </div>
+      <div class="col-6">
+        <button class="btn btn-primary" name="myBudget">
+          Display Budget
+        </button>
+      </div>
+      <div class="col-3">
+        <button
+          class="btn btn-success"
+          name="myBudget"
+          onclick="saveBudget()"
+        >
+          Save Budget
+        </button>
+      </div>
+    </div>
+    </section>
+    <section class="mt-4 text-center container">
+      
       <h4 class="text-white"><b> Welcome <?= $dName; ?></b></h4>
     </section>
     <section class="mainbody">
