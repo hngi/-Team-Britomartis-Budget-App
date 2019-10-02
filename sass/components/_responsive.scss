@@ -11,6 +11,11 @@
   .form-title {
     font-size: 2.2rem;
   }
+
+  .logo {
+    width: 170px !important;
+    object-fit: contain;
+  }
 }
 
 @media screen and (max-width:366px) {
@@ -20,6 +25,7 @@
 
   .logo {
     width: 150px !important;
+    object-fit: contain;
   }
 
   .b-text {
@@ -29,4 +35,11 @@
   .form-title {
     font-size: 2rem;
   }
+}
+
+
+@media screen and (max-width:257px) {
+ #my-nav {
+  text-align: left !important;
+ }
 }
