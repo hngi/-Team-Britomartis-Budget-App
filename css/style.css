@@ -46,7 +46,7 @@
   background: #09598e;
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-left: 60px;
+  padding-left: 20px;
   position: relative; }
   .navs .logo {
     width: 218px;
@@ -55,8 +55,8 @@
 .hero {
   position: relative;
   height: 80vh;
-  background: url(https://res.cloudinary.com/fabianuzukwu/image/upload/v1569531046/team%20britomartis/eordnce8xjl16nws3ftz.jpg);
-  background: url(https://res.cloudinary.com/fabianuzukwu/image/upload/v1569531046/team%20britomartis/eordnce8xjl16nws3ftz.jpg);
+  background: url(../../img/bghero.jpg);
+  background: url(../img/bghero.jpg);
   background-position: top center;
   background-repeat: no-repeat;
   overflow-y: hidden; }
@@ -86,19 +86,27 @@
     font-size: 1.5rem !important; }
 
   .form-title {
-    font-size: 2.2rem; } }
+    font-size: 2.2rem; }
+
+  .logo {
+    width: 170px !important;
+    object-fit: contain; } }
 @media screen and (max-width: 366px) {
   .display-4 {
     font-size: 2.3rem !important; }
 
   .logo {
-    width: 150px !important; }
+    width: 150px !important;
+    object-fit: contain; }
 
   .b-text {
     font-size: 1.4rem !important; }
 
   .form-title {
     font-size: 2rem; } }
+@media screen and (max-width: 257px) {
+  #my-nav {
+    text-align: left !important; } }
 html {
   min-height: 100%;
   position: relative; }
@@ -126,9 +134,3 @@ footer {
   width: 120px; }
 
 /*# sourceMappingURL=style.css.map */
-
-.repot {
-  padding: 0px 10px;
-  border-radius: 5px;
-  margin-bottom: 15px;
-}
