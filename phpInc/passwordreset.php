@@ -35,7 +35,7 @@ if(isset($_POST['reset-email'])){
     if($row['num'] > 0){
 
          //Creating a new password for the user.
-    $password = substr(md5(uniqid(rand(),1)),3,8);
+    $password = substr(md5(uniqid(rand(),1)),3,10);
 
     //Creating message that will be sent to the user on their email
     $output='<p>Dear user,</p>';
@@ -62,9 +62,8 @@ if(isset($_POST['reset-email'])){
     //Users mail 
     $to = $email;
 
-//if the mail is succeful then we send it to the mail
+//if the mail is sent succefully then save it in the database
         if(mail($to,$subject,$message,$headers)){
-        $pass_reset_report = 'Success!!! A reset code has been sent to your email';
 
         $passwordHash = password_hash($password, PASSWORD_BCRYPT, array("cost" => 12));
         //Construct the SQL statement and prepare it.
@@ -77,6 +76,8 @@ if(isset($_POST['reset-email'])){
 
         //Execute.
         $stmt->execute();
+
+        $pass_reset_report = 'Success!!! A reset code has been sent to your email';
                 
         }else{
             
