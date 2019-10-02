@@ -9,6 +9,8 @@
  <meta name="title" content="Go Budget">
  <meta name="keywords" content="GoBudget,money,save, budget">
  <meta name="author" content="Go Budget">
+ <script src="https://apis.google.com/js/platform.js" async defer></script>
+ <meta name="google-signin-client_id" content="231468933986-hunshlo05rqd8ta512i79me4vdmss6b1.apps.googleusercontent.com">
 
  <!-- Open Graph / Facebook -->
  <meta property="og:type" content="webapp">
@@ -111,6 +113,7 @@
                <a class="text-primary" data-target="#signupmodal" data-toggle="modal" data-dismiss="modal">Sign
                 Up</a>
                </label>
+              <div class="g-signin2" data-onsuccess="onSignIn"></div>
              </div>
            </fieldset>
          </form>
