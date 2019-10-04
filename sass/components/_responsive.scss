@@ -1,11 +1,16 @@
+@media screen and (max-width: 810px){
+  .hero .container .display-4 {
+    font-size: 3rem;
+ }
+}
 
-@media screen and (min-width: 366px) and (max-width:700px) {
+@media screen  and (max-width:700px) {
   .display-4{   
-    font-size: 2.5rem !important;
+    font-size: 2rem;
   }
 
   .b-text {
-    font-size: 1.5rem !important;
+    font-size: 1.25rem;
   }
 
   .form-title {
@@ -20,7 +25,7 @@
 
 @media screen and (max-width:366px) {
   .display-4{   
-    font-size: 2.3rem !important;
+    font-size: 2.3rem;
   }
 
   .logo {
@@ -29,7 +34,7 @@
   }
 
   .b-text {
-    font-size: 1.4rem !important;
+    font-size: 1.4rem;
   }
 
   .form-title {
@@ -42,4 +47,22 @@
  #my-nav {
   text-align: left !important;
  }
+}
+
+@media screen and (max-width: 823px) and (orientation:landscape){
+  .hero .container .display-4  {
+    font-size: 1.5rem;
+  }
+
+
+  .hero .container {
+    position:absolute;
+    top:30%;
+  }
+}
+
+@media screen and (max-width: 700px) and (orientation:landscape){
+  .hero .container .display-4  {
+    font-size: 1rem;
+  }
 }
