@@ -1,0 +1,19 @@
+{
+  "name": "-team-britomartis-budget-app",
+  "version": "1.0.0",
+  "description": "A budget App",
+  "main": "dashboard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sheygs/-Team-Britomartis-Budget-App.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sheygs/-Team-Britomartis-Budget-App/issues"
+  },
+  "homepage": "https://github.com/Sheygs/-Team-Britomartis-Budget-App#readme"
+}
