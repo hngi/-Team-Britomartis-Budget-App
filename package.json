@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Sheygs/-Team-Britomartis-Budget-App/issues"
   },
-  "homepage": "https://github.com/Sheygs/-Team-Britomartis-Budget-App#readme"
+  "homepage": "https://github.com/Sheygs/-Team-Britomartis-Budget-App#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
 }
