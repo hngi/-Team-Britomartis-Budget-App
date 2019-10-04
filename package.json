@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sheygs/-Team-Britomartis-Budget-App.git"
+    "url": "git+https://github.com/hng/-Team-Britomartis-Budget-App.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Sheygs/-Team-Britomartis-Budget-App/issues"
+    "url": "https://github.com/hng/-Team-Britomartis-Budget-App/issues"
   },
   "homepage": "https://github.com/Sheygs/-Team-Britomartis-Budget-App#readme",
   "devDependencies": {
