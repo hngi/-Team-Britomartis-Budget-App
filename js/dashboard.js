@@ -28,8 +28,9 @@ $(document).ready(function() {
 
 // DELETE BUTTON FUNCTION
 function deleted() {
-  const items = document.querySelectorAll('#itemObj');
-  console.log(items.length);
+  const deleteBtn = document.querySelector('#deleteBtn');
+  const deteleRow = deleteBtn.parentElement.parentElement;
+  deteleRow.remove();
   
   
   // if (tableRow > 1) {

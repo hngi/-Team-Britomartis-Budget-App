@@ -9,8 +9,8 @@ session_start();
 
 //Our Local connection details.
 $host = 'localhost';
-$user = 'rootuser';
-$password = 'student55';
+$user = 'root';
+$password = '';
 $database = 'gobudget';
 
 
