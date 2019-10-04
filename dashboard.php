@@ -26,8 +26,41 @@ if ($dCurrency == 'NGN') {
     <link rel="stylesheet" href="./css/dashboard.css" />
     <link rel="stylesheet" href="./css/all.min.css" />
     <link rel="stylesheet" href="./css/fontawesome.min.css" />
+    <link rel="stylesheet" href="./css/fbstyle.css" />
+    <script src="./js/fbscript.js"></script>
   </head>
   <body>
+    <div class="open-btn">
+				<button class="open-button" onclick="openForm()">
+				<strong>Feedback Form</strong>
+				</button>
+			  </div>
+			  <div id="feedbackPopup">
+				<div class="form-popup">
+				  <form action="https://formsubmit.co/baolinnovationz@gmail.com" class="form-container" method="POST">
+		
+					<h4>We would love to hear from you.</h4>
+					<label for="name">
+					<strong>Name</strong>
+					</label>
+					<input type="text" id="email" placeholder="John Diego" name="Name" minlength="5" required>
+					<label for="email">
+					  <strong>E-mail</strong>
+					  </label>
+					  <input type="text" id="email" placeholder="Johndgo@gmail.com" name="email" required>
+					  <label for="Feedback Type">
+						  <strong>Feedback Type</strong>
+						  </label>
+						  <input type="text" id="email" placeholder="Comment, Complaint or Question" minlength="7" name="Feedback" required>
+					<label for="Textarea">
+					<strong>Describe Feedback</strong>
+					</label>
+					<textarea name="Comment" placeholder="Feedback Message" minlength="20"required ></textarea>
+					<button type="submit" value="SEND" class="btn">Submit Feedback</button>
+					<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+				  </form>
+				</div>
+			  </div>
     <section class="">
     <div class="row ">
       <div class="col-3">
