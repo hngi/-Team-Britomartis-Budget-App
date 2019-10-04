@@ -1,0 +1,326 @@
+body{
+	background-image: url(https://res.cloudinary.com/dcoqt2wpo/image/upload/v1569313545/coins-4421639_1_21_nwagbt.png);
+	background-size: cover;
+	min-height: 1000px;
+	width: 100%;
+	background-repeat: no-repeat;
+	position: relative;
+	background-attachment: fixed;
+
+
+}
+
+
+
+.page{
+	width: 1200px;
+	height: 1600px;
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 20px;
+	
+	line-height: 2px;
+
+	
+}
+
+h1{
+	color: white;
+}
+
+h2{
+	color: white;
+}
+
+h5{
+	color: white;
+	font-weight: normal;
+	font-size: 17px;
+	line-height: 25px;
+}
+li{
+	line-height: 20px;
+}
+.just{
+	line-height: 20px;
+}
+
+@media screen and (min-width: 500px){
+	body{
+	background-image: url(https://res.cloudinary.com/dcoqt2wpo/image/upload/v1569313545/coins-4421639_1_21_nwagbt.png);
+	background-size: cover;
+	min-height: 1000px;
+	width: 100%;
+	background-repeat: no-repeat;
+	position: relative;
+	background-attachment: fixed;
+
+}
+
+.page{
+	width: 500px;
+	height: 3100px;
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 20px;
+	
+	line-height: 2px;
+
+	
+}
+
+h1{
+	color: white;
+	line-height: 25px;
+}
+
+h2{
+	color: white;
+	line-height: 25px;
+}
+
+h5{
+	color: white;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 25px;
+}
+li{
+	line-height: 20px;
+}
+.just{
+	line-height: 20px;
+}
+}
+
+@media screen and (min-width: 300px){
+	body{
+	background-image: url(https://res.cloudinary.com/dcoqt2wpo/image/upload/v1569313545/coins-4421639_1_21_nwagbt.png);
+	background-size: cover;
+	min-height: 1000px;
+	width: 100%;
+	background-repeat: no-repeat;
+
+}
+
+.page{
+	width: 300px;
+	height: 3100px;
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 20px;
+	
+	line-height: 2px;
+
+	
+}
+
+h1{
+	color: white;
+	line-height: 25px;
+}
+
+h2{
+	color: white;
+	line-height: 25px;
+}
+
+h5{
+	color: white;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 25px;
+}
+li{
+	line-height: 20px;
+}
+.just{
+	line-height: 20px;
+}
+}
+
+
+
+
+
+@media screen and (min-width: 400px)  {
+	body{
+	background-image: url(https://res.cloudinary.com/dcoqt2wpo/image/upload/v1569313545/coins-4421639_1_21_nwagbt.png);
+	background-size: cover;
+	min-height: 1000px;
+	width: 100%;
+	background-repeat: no-repeat;
+	position: relative;
+	background-attachment: fixed;
+
+}
+
+.page{
+	width: 350px;
+	height: 3100px;
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 20px;
+	
+	line-height: 2px;
+
+	
+}
+
+h1{
+	color: white;
+	line-height: 25px;
+}
+
+h2{
+	color: white;
+	line-height: 25px;
+}
+
+h5{
+	color: white;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 25px;
+}
+li{
+	line-height: 20px;
+}
+.just{
+	line-height: 20px;
+}
+}
+@media screen and (min-width: 600px)  {
+body{
+	background-image: url(https://res.cloudinary.com/dcoqt2wpo/image/upload/v1569313545/coins-4421639_1_21_nwagbt.png);
+	background-size: cover;
+	min-height: 1000px;
+	width: 100%;
+	background-repeat: no-repeat;
+	position: relative;
+	background-attachment: fixed;
+
+}
+
+.page{
+	width: 550px;
+	height: 2200px;
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 20px;
+	
+	line-height: 2px;
+
+	
+}
+
+h1{
+	color: white;
+	line-height: 25px;
+}
+
+h2{
+	color: white;
+	line-height: 25px;
+}
+
+h5{
+	color: white;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 25px;
+}
+li{
+	line-height: 20px;
+}
+.just{
+	line-height: 20px;
+}
+}
+@media screen and (min-width: 1000px) {
+body{
+	background-image: url(https://res.cloudinary.com/dcoqt2wpo/image/upload/v1569313545/coins-4421639_1_21_nwagbt.png);
+	background-size: cover;
+	min-height: 1000px;
+	width: 100%;
+	background-repeat: no-repeat;
+	position: relative;
+	background-attachment: fixed;
+
+}
+
+.page{
+	width: 900px;
+	height: 2000px;
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 20px;
+	
+	line-height: 2px;
+
+	
+}
+
+h1{
+	color: white;
+	line-height: 25px;
+}
+
+h2{
+	color: white;
+	line-height: 25px;
+}
+
+h5{
+	color: white;
+	font-weight: normal;
+	font-size: 25px;
+	line-height: 25px;
+}
+li{
+	line-height: 20px;
+}
+.just{
+	line-height: 20px;
+}
+}
+@media screen and (min-width: 1400px) {
+	body{
+	background-image: url(https://res.cloudinary.com/dcoqt2wpo/image/upload/v1569313545/coins-4421639_1_21_nwagbt.png);
+	background-size: cover;
+	min-height: 1000px;
+	width: 100%;
+	background-repeat: no-repeat;
+	position: relative;
+	background-attachment: fixed;
+
+}
+
+.page{
+	width: 1200px;
+	height: 2000px;
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 20px;
+	
+	line-height: 2px;
+
+	
+}
+
+h1{
+	color: white;
+	line-height: 25px;
+}
+
+h2{
+	color: white;
+	line-height: 25px;
+}
+
+h5{
+	color: white;
+	font-weight: normal;
+	font-size: 25px;
+	line-height: 25px;
+}
+li{
+	line-height: 20px;
+}
+.just{
+	line-height: 20px;
+}
+}
