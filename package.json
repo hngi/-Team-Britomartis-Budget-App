@@ -4,7 +4,7 @@
   "description": "A budget App",
   "main": "dashboard.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass": "node-sass sass/_responsive.scss css/responsive.css"
   },
   "repository": {
     "type": "git",
