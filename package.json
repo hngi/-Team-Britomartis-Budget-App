@@ -4,7 +4,7 @@
   "description": "A budget App",
   "main": "dashboard.js",
   "scripts": {
-    "compile:sass": "node-sass sass/_responsive.scss css/responsive.css"
+    "compile:sass": "node-sass sass/components/_responsive.scss css/responsive.css"
   },
   "repository": {
     "type": "git",

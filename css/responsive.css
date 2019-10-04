@@ -1,0 +1,36 @@
+@media screen and (min-width: 366px) and (max-width: 700px) {
+  .display-4 {
+    font-size: 2.5rem; }
+  .b-text {
+    font-size: 1.5rem; }
+  .form-title {
+    font-size: 2.2rem; }
+  .logo {
+    width: 170px !important;
+    object-fit: contain; } }
+
+@media screen and (max-width: 366px) {
+  .display-4 {
+    font-size: 2.3rem; }
+  .logo {
+    width: 150px !important;
+    object-fit: contain; }
+  .b-text {
+    font-size: 1.4rem; }
+  .form-title {
+    font-size: 2rem; } }
+
+@media screen and (max-width: 257px) {
+  #my-nav {
+    text-align: left !important; } }
+
+@media screen and (max-width: 813px) and (orientation: landscape) {
+  .hero .container .display-4 {
+    font-size: 1.5rem; }
+  .hero .container {
+    position: absolute;
+    top: 30%; } }
+
+@media screen and (max-width: 700px) and (orientation: landscape) {
+  .hero .container .display-4 {
+    font-size: 0.75rem; } }
