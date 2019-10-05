@@ -8,10 +8,16 @@ session_start();
 //If using locally, please comment out the remote connection section
 
 //Our Local connection details.
-$host = 'localhost';
-$user = 'rootuser';
-$password = 'student55';
-$database = 'gobudget';
+// $host = 'localhost';
+// $user = 'rootuser';
+// $password = 'student55';
+// $database = 'gobudget';
+
+//Our remote connection details.
+$host = 'us-cdbr-iron-east-02.cleardb.net';
+$user = 'b45f730745b2dc';
+$password = '236593db';
+$database = 'heroku_498fd6e97d18ba4';
 
  
 //An options array.
