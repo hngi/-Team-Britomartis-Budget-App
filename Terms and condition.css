@@ -1,5 +1,5 @@
 body{
-	background-image: url(https://res.cloudinary.com/dcoqt2wpo/image/upload/v1569313545/coins-4421639_1_21_nwagbt.png);
+	background-color: white
 	background-size: cover;
 	min-height: 1000px;
 	width: 100%;
@@ -46,7 +46,7 @@ li{
 
 @media screen and (min-width: 500px){
 	body{
-	background-image: url(https://res.cloudinary.com/dcoqt2wpo/image/upload/v1569313545/coins-4421639_1_21_nwagbt.png);
+	background-color: white;
 	background-size: cover;
 	min-height: 1000px;
 	width: 100%;
@@ -80,7 +80,7 @@ h2{
 h5{
 	color: white;
 	font-weight: normal;
-	font-size: 20px;
+	font-size: 17px;
 	line-height: 25px;
 }
 li{
@@ -93,7 +93,7 @@ li{
 
 @media screen and (min-width: 300px){
 	body{
-	background-image: url(https://res.cloudinary.com/dcoqt2wpo/image/upload/v1569313545/coins-4421639_1_21_nwagbt.png);
+	background-color: white;
 	background-size: cover;
 	min-height: 1000px;
 	width: 100%;
@@ -103,7 +103,7 @@ li{
 
 .page{
 	width: 300px;
-	height: 3100px;
+	height: 3600px;
 	background-color: rgba(0, 0, 0, 0.4);
 	padding: 20px;
 	
@@ -125,7 +125,7 @@ h2{
 h5{
 	color: white;
 	font-weight: normal;
-	font-size: 20px;
+	font-size: 17px;
 	line-height: 25px;
 }
 li{
@@ -139,10 +139,9 @@ li{
 
 
 
-
 @media screen and (min-width: 400px)  {
 	body{
-	background-image: url(https://res.cloudinary.com/dcoqt2wpo/image/upload/v1569313545/coins-4421639_1_21_nwagbt.png);
+	background-color: white;
 	background-size: cover;
 	min-height: 1000px;
 	width: 100%;
@@ -154,7 +153,7 @@ li{
 
 .page{
 	width: 350px;
-	height: 3100px;
+	height: 3600px;
 	background-color: rgba(0, 0, 0, 0.4);
 	padding: 20px;
 	
@@ -176,7 +175,7 @@ h2{
 h5{
 	color: white;
 	font-weight: normal;
-	font-size: 20px;
+	font-size: 17px;
 	line-height: 25px;
 }
 li{
@@ -185,10 +184,11 @@ li{
 .just{
 	line-height: 20px;
 }
+
 }
 @media screen and (min-width: 600px)  {
 body{
-	background-image: url(https://res.cloudinary.com/dcoqt2wpo/image/upload/v1569313545/coins-4421639_1_21_nwagbt.png);
+	background-color: white;
 	background-size: cover;
 	min-height: 1000px;
 	width: 100%;
@@ -200,7 +200,7 @@ body{
 
 .page{
 	width: 550px;
-	height: 2200px;
+	height: 2500px;
 	background-color: rgba(0, 0, 0, 0.4);
 	padding: 20px;
 	
@@ -222,7 +222,7 @@ h2{
 h5{
 	color: white;
 	font-weight: normal;
-	font-size: 20px;
+	font-size: 17px;
 	line-height: 25px;
 }
 li{
@@ -234,7 +234,7 @@ li{
 }
 @media screen and (min-width: 1000px) {
 body{
-	background-image: url(https://res.cloudinary.com/dcoqt2wpo/image/upload/v1569313545/coins-4421639_1_21_nwagbt.png);
+	background-color: white
 	background-size: cover;
 	min-height: 1000px;
 	width: 100%;
@@ -280,7 +280,7 @@ li{
 }
 @media screen and (min-width: 1400px) {
 	body{
-	background-image: url(https://res.cloudinary.com/dcoqt2wpo/image/upload/v1569313545/coins-4421639_1_21_nwagbt.png);
+	background-color: white;
 	background-size: cover;
 	min-height: 1000px;
 	width: 100%;
@@ -292,7 +292,7 @@ li{
 
 .page{
 	width: 1200px;
-	height: 2000px;
+	height: 2300px;
 	background-color: rgba(0, 0, 0, 0.4);
 	padding: 20px;
 	

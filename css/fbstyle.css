@@ -21,9 +21,8 @@
     
       .open-btn {
       display: flex;
-      justify-content: right;
-      margin-left: 200px;
-     align-items: inherit;
+      margin-left: 150px;
+     align-items: center;
       }
     
       .open-button {
@@ -34,7 +33,6 @@
       border-radius: 5px;
       cursor: pointer;
       opacity: 0.8;
-      
       }
      
       .form-popup {
