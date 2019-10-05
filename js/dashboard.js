@@ -18,19 +18,7 @@ $(document).ready(function() {
     <td class="text-capitalize"><b id="categoryRow">${category}</b></td>
     <td class="text-capitalize"><input onkeyup="testInput(this, this.value)" id="amount" type="text" value="0" min="0" size="4" /></td>
       <td class="text-capitalize"><b id="priorityRow">${priority}</b></td>
-     /*save button*/
-     <button type="save" class="btn btn-Success" id ="sucessBtn" name="successBtn" onclick="saveBudget()">
-          Save Budget
-        </button>
-        </td>
-        
-       /* clear button*/
-        <td>
-      <button class="btn btn-primary" id ="resetBtn" type="reset" name="resetBtn" onclick="reset()">
-          clear
-        </button>
-        </td>
- <td>
+    <td>
         <button class="btn btn-danger" id ="deleteBtn" name="deleteBtn" onclick="deleted()">
           <i class="fas fa-trash-alt"></i>
         </button>
