@@ -1,5 +1,10 @@
+//Declare a global variable for holding the value in the amount input field
+let globalAmountArray = [];
+//declare a global variable to hold a boolean value to test which input field was change
+let golbalTestArray = [];
+
 $(document).ready(function() {
-  //DISPLAYING ITEM ON THE DASHBOARD
+    //DISPLAYING ITEM ON THE DASHBOARD
   $("#itemform").on("submit", function(e) {
     e.preventDefault();
     let allItems = "";
@@ -11,7 +16,7 @@ $(document).ready(function() {
     allItems = ` <tr id="itemObj">
     <td class="text-capitalize"><b id="itemRow">${item}</b></td>
     <td class="text-capitalize"><b id="categoryRow">${category}</b></td>
-    <td class="text-capitalize"><b id="amount"></b></td>
+    <td class="text-capitalize"><input onkeyup="testInput(this, this.value)" id="amount" type="number" value="0" min="0" size="4" /></td>
       <td class="text-capitalize"><b id="priorityRow">${priority}</b></td>
       <td>
         <button class="btn btn-danger" id ="deleteBtn" name="deleteBtn" onclick="deleted()">
@@ -21,6 +26,8 @@ $(document).ready(function() {
     </tr>`;
 
     insideTable.append(allItems);
+    globalAmountArray.push(0);
+    golbalTestArray.push(false);
 
     $("#itemform")[0].reset();
   });
@@ -63,11 +70,11 @@ function calculate() {
     </button>
   </div>`;
 
-    document.querySelector('#myAlert').innerHTML(alert);
+  $('#myAlert').html(alert);
 
-    setTimeout(() => {
-      document.querySelector('.alert').alert("close");
-    }, 3000);
+  setTimeout(() => {
+    $('.alert').remove();
+  }, 3000);
   
   } 
   else {
@@ -104,12 +111,91 @@ function calculate() {
     
     let amount;
 
-    for (let i = 0; i < prioArr.length; i++) {
-      amount = (prioArr[i] / prioritySum) * budgetedAmount.value
-      console.log(Math.round(amount * 100) / 100);
-      amountRow[i].innerText = Math.round(amount * 100) / 100;
-    }
+    if(sumAmount() == 0){
+      for (let i = 0; i < prioArr.length; i++) {
+        amount = (prioArr[i] / prioritySum) * budgetedAmount.value
+        console.log(Math.round(amount * 100) / 100);
+        amountRow[i].value = Math.round(amount * 100) / 100;
+        globalAmountArray[i] = Number.parseFloat(amountRow[i].value);
+      }
+    }else if(sumAmount() < budgetedAmount.value){
+      //get the input fields that were changed
+      for (let i = 0; i < prioArr.length; i++) {
+        if(globalAmountArray[i] !== Number.parseFloat(amountRow[i].value)){
+          golbalTestArray[i] = true;
+        }
+      }
 
+      //get the sum of the priorities needed and the total fixed amount
+      let sum = 0;
+      let totalFixedAmount = 0;
+      for (let i = 0; i < prioArr.length; i++) {
+        if(golbalTestArray[i]){
+          totalFixedAmount += Number.parseFloat(amountRow[i].value);
+          continue;
+        }
+        sum += prioArr[i];
+      }
+
+      //insert the values to their designated input fields
+      for (let i = 0; i < prioArr.length; i++) {
+        //update the previous amount array
+        globalAmountArray[i] = Number.parseFloat(amountRow[i].value);
+        //update the test array back to false
+        golbalTestArray[i] = false;
+
+        //check if the value does not need to be changed
+        if(golbalTestArray[i]){
+          continue;
+        }
+        amount = (prioArr[i] / sum) * (budgetedAmount.value - totalFixedAmount); 
+        amountRow[i].value = Math.round(amount * 100) / 100;
+      }
+    }else{
+      for (let i = 0; i < prioArr.length; i++) {
+        amountRow[i].value = 0;
+        globalAmountArray[i] = +Number.parseFloat(amountRow[i].value);
+      }
+
+      let alert = `<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                    <strong>Error!</strong>  Items amount greater than budgeted amount!
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="alert"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>`;
+
+    $('#myAlert').html(alert);
+
+    setTimeout(() => {
+      $('.alert').remove();
+    }, 3000);
+
+    }
+  }
+}
+
+//This function is used to sum all the amount 
+function sumAmount(){
+  const amountRow = document.querySelectorAll('#amount');
+  let sum = 0;
+
+  for (let i = 0; i < amountRow.length; i++) {
+    let item = Number.parseFloat(amountRow[i].value);
+    sum += item;
   }
 
+  return sum;
+}
+
+//This function is used to edit the user input as necessary
+function testInput(element, value){
+  if (Number.isNaN(Number.parseFloat(value))) {
+    element.value = 0;
+    return;
+  }
 }
