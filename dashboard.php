@@ -30,7 +30,19 @@ if ($dCurrency == 'NGN') {
     <script src="./js/fbscript.js"></script>
   </head>
   <body>
-    <div class="open-btn">
+   
+    <section class="">
+    <div class="row ">
+      <div class="col-3">
+        <form action="" method="POST">
+            <button class="btn btn-danger" name="logout">Log Out</button>
+        </form>
+      </div>
+     <div class="col-3">
+        
+      </div>
+      <div class="col-6">
+      <div class="open-btn">
 				<button class="open-button" onclick="openForm()">
 				<strong>Feedback Form</strong>
 				</button>
@@ -61,27 +73,7 @@ if ($dCurrency == 'NGN') {
 				  </form>
 				</div>
 			  </div>
-    <section class="">
-    <div class="row ">
-      <div class="col-3">
-        <form action="" method="POST">
-            <button class="btn btn-danger" name="logout">Log Out</button>
-        </form>
       </div>
-      <!-- <div class="col-6">
-        <button class="btn btn-primary" name="myBudget">
-          Display Budget
-        </button>
-      </div>
-      <div class="col-3">
-        <button
-          class="btn btn-success"
-          name="myBudget"
-          onclick="saveBudget()"
-        >
-          Save Budget
-        </button>
-      </div> -->
     </div>
     </section>
     <section class="mt-4 text-center container">
