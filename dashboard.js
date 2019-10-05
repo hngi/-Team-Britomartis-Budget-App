@@ -1,48 +1,33 @@
+//Declare a global variable for holding the value in the amount input field
+let globalAmountArray = [];
+//declare a global variable to hold a boolean value to test which input field was change
+let golbalTestArray = [];
+
 $(document).ready(function() {
-  //DISPLAYING ITEM ON THE DASHBOARD
+    //DISPLAYING ITEM ON THE DASHBOARD
   $("#itemform").on("submit", function(e) {
     e.preventDefault();
     let allItems = "";
     let item = $("#item").val();
     let priority = $("#priority").val();
+    let category = $("#category").val();
     let insideTable = $("#insideTable");
 
-    allItems += ` <tr>
+    allItems = ` <tr id="itemObj">
     <td class="text-capitalize"><b id="itemRow">${item}</b></td>
-    <td class="text-capitalize"><b id="amount"></b></td>
+    <td class="text-capitalize"><b id="categoryRow">${category}</b></td>
+    <td class="text-capitalize"><input onkeyup="testInput(this, this.value)" id="amount" type="number" value="0" min="0" size="4" /></td>
       <td class="text-capitalize"><b id="priorityRow">${priority}</b></td>
-      <td>
-      
-      /*save button*/
-     <button type="save" class="btn btn-Success" id ="sucessBtn" name="successBtn" onclick="success()">
-          Save
-        </button>
-        </td>
-        
-       /* clear button*/
-        <td>
-      <button class="btn btn-default" id ="resetBtn" type="reset" name="resetBtn" onclick="reset()">
-          clear
-        </button>
-        </td>
-      
-      
-      
       <td>
         <button class="btn btn-danger" id ="deleteBtn" name="deleteBtn" onclick="deleted()">
           <i class="fas fa-trash-alt"></i>
-          
         </button>
-        
       </td>
-      
-        
-        
-      
-      
     </tr>`;
 
     insideTable.append(allItems);
+    globalAmountArray.push(0);
+    golbalTestArray.push(false);
 
     $("#itemform")[0].reset();
   });
@@ -50,29 +35,29 @@ $(document).ready(function() {
 
 // DELETE BUTTON FUNCTION
 function deleted() {
-  let tableid = document.getElementById("tableid");
-  let tableRow = tableid.rows.length;
-  if (tableRow > 1) {
-    for (let i = 0; i < tableRow; i++) {
-      let clickedBtn = tableid.rows[i].cells[0].childNodes[0];
-      console.log(clickedBtn);
-      if (clickedBtn.click) {
-        tableid.deleteRow(i);
-        tableid--;
-      }
-    }
-  }
+  const deleteBtn = document.querySelector('#deleteBtn');
+  const deteleRow = deleteBtn.parentElement.parentElement;
+  deteleRow.remove();
+  
+  
+  // if (tableRow > 1) {
+  //   for (let i = 0; i < tableRow; i++) {
+  //     let clickedBtn = tableid.rows[i].cells[0].childNodes[0];
+  //     console.log(clickedBtn);
+  //     if (clickedBtn.click) {
+  //       tableid.deleteRow(i);
+  //       tableid--;
+  //     }
+  //   }
+  // }
 }
 
 // CALCULATE BUTTON FUNCTION
 function calculate() {
-  let table = document.getElementById("tableid");
-  let tableRows = table.rows.length;
-  let priority = $("#priorityRow").html();
-
-  let budgetedamount = $("#budgetedamount").val();
-  let alert = "";
-  if (tableRows < 2 || budgetedamount == "") {
+  // let table = document.getElementById("tableid");
+  // let tableRows = table.rows.length;
+  const items = document.querySelectorAll('#itemObj');
+  if (items.length == 0 || budgetedamount == "") {
     alert = `<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
     <strong>Error!</strong>  Items Rows or Enter Total Available Sum cannot be empty.
     <button
@@ -85,175 +70,132 @@ function calculate() {
     </button>
   </div>`;
 
-    $("#myAlert").html(alert);
+  $('#myAlert').html(alert);
+
+  setTimeout(() => {
+    $('.alert').remove();
+  }, 3000);
+  
+  } 
+  else {
+    
+    const prioArr = [];
+    const budgetedAmount = document.querySelector('#budgetedamount');
+    
+    const priorities = document.querySelectorAll('#priorityRow').values();
+    const amountRow = document.querySelectorAll('#amount');
+    for (let prior of priorities) {
+      let priority = prior.innerText;
+      
+      if (priority == 'Low') {
+        priority = 1;
+        prioArr.push(priority);
+      }
+
+      if (priority == 'Medium') {
+        priority = 2;
+        prioArr.push(priority);
+      }
+
+      if (priority == 'High') {
+        priority = 3;
+        prioArr.push(priority);
+      } 
+    }
+    console.log(prioArr);
+    console.log(budgetedAmount.value);
+
+    const prioritySum = prioArr.reduce((a, b) => (a + b), 0); 
+
+    console.log(prioritySum);
+    
+    let amount;
+
+    if(sumAmount() == 0){
+      for (let i = 0; i < prioArr.length; i++) {
+        amount = (prioArr[i] / prioritySum) * budgetedAmount.value
+        console.log(Math.round(amount * 100) / 100);
+        amountRow[i].value = Math.round(amount * 100) / 100;
+        globalAmountArray[i] = Number.parseFloat(amountRow[i].value);
+      }
+    }else if(sumAmount() < budgetedAmount.value){
+      //get the input fields that were changed
+      for (let i = 0; i < prioArr.length; i++) {
+        if(globalAmountArray[i] !== Number.parseFloat(amountRow[i].value)){
+          golbalTestArray[i] = true;
+        }
+      }
+
+      //get the sum of the priorities needed and the total fixed amount
+      let sum = 0;
+      let totalFixedAmount = 0;
+      for (let i = 0; i < prioArr.length; i++) {
+        if(golbalTestArray[i]){
+          totalFixedAmount += Number.parseFloat(amountRow[i].value);
+          continue;
+        }
+        sum += prioArr[i];
+      }
+
+      //insert the values to their designated input fields
+      for (let i = 0; i < prioArr.length; i++) {
+        //update the previous amount array
+        globalAmountArray[i] = Number.parseFloat(amountRow[i].value);
+        //update the test array back to false
+        golbalTestArray[i] = false;
+
+        //check if the value does not need to be changed
+        if(golbalTestArray[i]){
+          continue;
+        }
+        amount = (prioArr[i] / sum) * (budgetedAmount.value - totalFixedAmount); 
+        amountRow[i].value = Math.round(amount * 100) / 100;
+      }
+    }else{
+      for (let i = 0; i < prioArr.length; i++) {
+        amountRow[i].value = 0;
+        globalAmountArray[i] = +Number.parseFloat(amountRow[i].value);
+      }
+
+      let alert = `<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                    <strong>Error!</strong>  Items amount greater than budgeted amount!
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="alert"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>`;
+
+    $('#myAlert').html(alert);
 
     setTimeout(() => {
-      $(".alert").alert("close");
+      $('.alert').remove();
     }, 3000);
-  } else {
-    if (priority == "Very High") {
-      let theamsedata = $("#tableid tr > td:contains(Very High)").length;
-      if (theamsedata > 1) {
-        alert = `<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-              <strong>Error!</strong>  You can not have the same Priority.
-              <button
-                type="button"
-                class="close"
-                data-dismiss="alert"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>`;
 
-        $("#myAlert").html(alert);
-        setTimeout(() => {
-          $(".alert").alert("close");
-        }, 3000);
-      } else {
-        amount = (40 / 100) * budgetedamount;
-        $("#amount").html(amount);
-      }
-    } else if (priority == "High") {
-      let theamsedata = $("#tableid tr > td:contains(High)").length;
-      if (theamsedata > 1) {
-        alert = `<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-        <strong>Error!</strong>  You can not have the same Priority.
-        <button
-          type="button"
-          class="close"
-          data-dismiss="alert"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>`;
-
-        $("#myAlert").html(alert);
-        setTimeout(() => {
-          $(".alert").alert("close");
-        }, 3000);
-      } else {
-        amount = (30 / 100) * budgetedamount;
-        $("#amount").html(amount);
-      }
-    } else if (priority == "Low") {
-      let theamsedata = $("#tableid tr > td:contains(Low)").length;
-      if (theamsedata > 1) {
-        alert = `<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-        <strong>Error!</strong>  You can not have thesame Priolity.
-        <button
-          type="button"
-          class="close"
-          data-dismiss="alert"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>`;
-
-        $("#myAlert").html(alert);
-        setTimeout(() => {
-          $(".alert").alert("close");
-        }, 3000);
-      } else {
-        amount = (20 / 100) * budgetedamount;
-        $("#amount").html(amount);
-      }
-    } else if (priority == "Very Low") {
-      let theamsedata = $("#tableid tr > td:contains(Very Low)").length;
-      if (theamsedata > 1) {
-        alert = `<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-        <strong>Error!</strong>  You can not have thesame Priolity.
-        <button
-          type="button"
-          class="close"
-          data-dismiss="alert"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>`;
-
-        $("#myAlert").html(alert);
-        setTimeout(() => {
-          $(".alert").alert("close");
-        }, 3000);
-      } else {
-        amount = (10 / 100) * budgetedamount;
-        $("#amount").html(amount);
-      }
     }
   }
 }
 
-function saveBudget() {
-  let category = $("#category").val();
-  let alert = "";
-  let item = $("#itemRow").html();
-  let priority = $("#priorityRow").html();
-  let amount = $("#amount").html();
-  let total = $("#budgetedamount").val();
-  let data = { item, amount, priority, category, total };
+//This function is used to sum all the amount 
+function sumAmount(){
+  const amountRow = document.querySelectorAll('#amount');
+  let sum = 0;
 
-  if (category == "" || item == null || priority == null || total == "") {
-    alert = `<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-    <strong>Error!</strong>  Select categories, Enter Items and total sum before you save.
-    <button
-      type="button"
-      class="close"
-      data-dismiss="alert"
-      aria-label="Close"
-    >
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>`;
-
-    $("#myAlert").html(alert);
-    setTimeout(() => {
-      $(".alert").alert("close");
-    }, 3000);
-  } else {
-    $.ajax({
-      method: "POST",
-      url: "budget-save.php",
-      data: data,
-      success: function(result) {
-        console.log(result);
-      }
-    });
+  for (let i = 0; i < amountRow.length; i++) {
+    let item = Number.parseFloat(amountRow[i].value);
+    sum += item;
   }
+
+  return sum;
 }
 
-function display() {
-  let category = $("#category").val();
-  let total = $("#budgetedamount");
-  $.ajax({
-    method: "GET",
-    url: "budget-get.php",
-    data: { category },
-    success: function(result) {
-      let insideTable = $("#insideTable");
-      let myData = "";
-      console.log(result);
-
-      for (const key in result) {
-        const element = result[key];
-
-        myData = `<tr>
-        <td class="text-capitalize"><b id="itemRow">${element.item}</b></td>
-        <td class="text-capitalize"><b id="amount">${element.amount}</b></td>
-          <td class="text-capitalize"><b id="priorityRow">${element.priority}</b></td>
-          <td>
-            <button class="btn btn-danger" id ="deleteBtn" name="deleteBtn" onclick="deleted()">
-              <i class="fas fa-trash-alt"></i>
-            </button>
-          </td>
-        </tr>`;
-
-        insideTable.html(myData);
-        insideTable.val(element.total);
-      }
-    }
-  });
+//This function is used to edit the user input as necessary
+function testInput(element, value){
+  if (Number.isNaN(Number.parseFloat(value))) {
+    element.value = 0;
+    return;
+  }
 }
