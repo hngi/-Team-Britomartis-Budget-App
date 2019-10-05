@@ -3,66 +3,59 @@ let globalAmountArray = [];
 //declare a global variable to hold a boolean value to test which input field was change
 let golbalTestArray = [];
 
+
 $(document).ready(function() {
-    //DISPLAYING ITEM ON THE DASHBOARD
-  $("#itemform").on("submit", function(e) {
-    e.preventDefault();
-    let allItems = "";
-    let item = $("#item").val();
-    let priority = $("#priority").val();
-    let category = $("#category").val();
-    let insideTable = $("#insideTable");
+  //DISPLAYING ITEM ON THE DASHBOARD
+$("#itemform").on("submit", function(e) {
+  e.preventDefault();
+  let allItems = "";
+  let item = $("#item").val();
+  let priority = $("#priority").val();
+  let category = $("#category").val();
+  let insideTable = $("#insideTable");
 
-    allItems = ` <tr id="itemObj">
-    <td class="text-capitalize"><b id="itemRow">${item}</b></td>
-    <td class="text-capitalize"><b id="categoryRow">${category}</b></td>
-    <td class="text-capitalize"><input onkeyup="testInput(this, this.value)" id="amount" type="text" value="0" min="0" size="4" /></td>
-      <td class="text-capitalize"><b id="priorityRow">${priority}</b></td>
-     /*save button*/
-     <button type="save" class="btn btn-Success" id ="sucessBtn" name="successBtn" onclick="saveBudget()">
-          Save Budget
-        </button>
-        </td>
-        
-       /* clear button*/
-        <td>
-      <button class="btn btn-primary" id ="resetBtn" type="reset" name="resetBtn" onclick="reset()">
-          clear
-        </button>
-        </td>
- <td>
-        <button class="btn btn-danger" id ="deleteBtn" name="deleteBtn" onclick="deleted()">
-          <i class="fas fa-trash-alt"></i>
-        </button>
-      </td>
-    </tr>`;
+  allItems = ` <tr id="itemObj">
+  <td class="text-capitalize"><b id="itemRow">${item}</b></td>
+  <td class="text-capitalize"><b id="categoryRow">${category}</b></td>
+  <td class="text-capitalize"><input onkeyup="testInput(this, this.value)" id="amount" type="text" value="0" min="0" size="4" /></td>
+    <td class="text-capitalize"><b id="priorityRow">${priority}</b></td>
+    <td>
+      <button class="btn btn-danger delete" id ="deleteBtn" name="deleteBtn" >
+        <i class="fas fa-trash-alt delete-icon"></i>
+      </button>
+    </td>
+  </tr>`;
 
-    insideTable.append(allItems);
-    globalAmountArray.push(0);
-    golbalTestArray.push(false);
+  insideTable.append(allItems);
+  attachEvent();
+  globalAmountArray.push(0);
+  golbalTestArray.push(false);
 
-    $("#itemform")[0].reset();
-  });
+  $("#itemform")[0].reset();
+});
+
+
+
 });
 
 // DELETE BUTTON FUNCTION
-function deleted() {
-  const deleteBtn = document.querySelector('#deleteBtn');
-  const deteleRow = deleteBtn.parentElement.parentElement;
-  deteleRow.remove();
-  
-  
-  // if (tableRow > 1) {
-  //   for (let i = 0; i < tableRow; i++) {
-  //     let clickedBtn = tableid.rows[i].cells[0].childNodes[0];
-  //     console.log(clickedBtn);
-  //     if (clickedBtn.click) {
-  //       tableid.deleteRow(i);
-  //       tableid--;
-  //     }
-  //   }
-  // }
+function attachEvent(){
+let deleteBtns = document.querySelectorAll('#deleteBtn');
+for (let a = 0; a < deleteBtns.length; a++) {
+  deleteBtns[a].addEventListener('click', function(e){
+    if (e.target.classList.contains('delete') || e.target.classList.contains('delete-icon')) {
+      let deleteRow;
+      
+      e.target.tagName.toLowerCase() === 'i' ? deleteRow = e.target.parentElement.parentElement.parentElement : deleteRow = e.target.parentElement.parentElement;
+
+      deleteRow.remove();
+    }
+  });
 }
+  return;
+}
+
+
 
 // CALCULATE BUTTON FUNCTION
 function calculate() {
