@@ -1,0 +1,22 @@
+{
+  "name": "-team-britomartis-budget-app",
+  "version": "1.0.0",
+  "description": "A budget App",
+  "main": "dashboard.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/components/_responsive.scss css/responsive.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hng/-Team-Britomartis-Budget-App.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hng/-Team-Britomartis-Budget-App/issues"
+  },
+  "homepage": "https://github.com/Sheygs/-Team-Britomartis-Budget-App#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
