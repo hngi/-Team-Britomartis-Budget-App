@@ -20,9 +20,9 @@
       }
     
       .open-btn {
-      display: flex;
+      display: block;
       margin-left: 150px;
-     align-items: inherit;
+      text-align: right;
       }
     
       .open-button {
