@@ -205,6 +205,22 @@ if ($dCurrency == 'NGN') {
               Calculate
             </button>
           </div>
+
+
+<div class="col-sm-6 col-md-3">
+     <button type="save" class="btn btn-primary btn-save" onclick="saveBudget()">
+          Save Budget
+        </button>
+        </div>
+        
+     
+        <div class="col-sm-6 col-md-3">
+      <button class="btn btn-primary" id ="resetBtn" type="reset" name="resetBtn" onclick="reset()">
+          clear
+        </button>
+        </div>
+
+
         </div>
       </div>
     </section>
